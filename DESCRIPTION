@@ -1,0 +1,25 @@
+Package: ecoocc
+Title: Occurrence, co-occurrence and more
+Version: 0.0.1
+Date: 2018-02-21
+Author:
+    person("Kevin", "Cazelles", role = c("aut"), comment = c(ORCID = "0000-0001-6619-9874"))
+Maintainer: Kevin Cazelles <kcazelle@uoguelph.ca>
+Description: A package that implements a couple of classical methods on presence-absence data.
+Depends:
+    R (>= 3.3.0)
+LazyData: true
+LinkingTo: Rcpp
+Imports:
+    Rcpp (>= 0.12.7),
+    magrittr,
+    utils
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat
+NeedsCompilation: yes
+VignetteBuilder: knitr
+License: GPL (>= 2)
+BugReports: https://github.com/KevCaz/GDFDanalyses/issues
+RoxygenNote: 6.0.1
