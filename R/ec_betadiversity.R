@@ -22,9 +22,11 @@
 #' the for scenarion (A, B, C, D). \code{bc} Bray-Curtis and \code{wi}
 #' Wishart.
 #'
+#' @encoding latin1
+#'
 #' @references
-#' Legendre, Pierre, and Miquel De Cáceres. “Beta Diversity as the Variance of Community Data: Dissimilarity Coefficients and Partitioning.” Ecology Letters 16, no. 8 (August 2013): 951–63. https://doi.org/10.1111/ele.12141.
-#' Koleff, P., Gaston, K. J. & Lennon, J. J. Measuring beta diversity for presence-absence data. J. Anim. Ecol. 72, 367\u2013382 (2003).
+#' Legendre, Pierre, and Miquel De Cáceres. Beta Diversity as the Variance of Community Data: Dissimilarity Coefficients and Partitioning. Ecology Letters (2013)
+#' Koleff, P., Gaston, K. J. & Lennon, J. J. Measuring beta diversity for presence-absence data. Journal of Animal Ecology (2003).
 #'
 #' @examples
 #' mat <- matrix(stats::runif(20)>.5, 10)
