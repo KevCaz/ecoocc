@@ -1,12 +1,12 @@
 # ecoocc
 
-## So far
+## Status
 
-- betadiversity
-- temporal betadiversity
-- rarefaction
+[![Build Status](https://travis-ci.org/KevCaz/ecoocc.svg?branch=master)](https://travis-ci.org/KevCaz/ecoocc)
 
+## What is implemented so far?
 
-## Todo
-
-- multi-occurrence 
+- betadiversity (Rcpp)
+- temporal betadiversity (Rcpp)
+- rarefaction (R)
+- occurrence (Rcpp)
