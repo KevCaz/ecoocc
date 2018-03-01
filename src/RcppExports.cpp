@@ -16,6 +16,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// cooccurrence_core
+DataFrame cooccurrence_core(LogicalMatrix mat_pa);
+RcppExport SEXP _ecoocc_cooccurrence_core(SEXP mat_paSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< LogicalMatrix >::type mat_pa(mat_paSEXP);
+    rcpp_result_gen = Rcpp::wrap(cooccurrence_core(mat_pa));
+    return rcpp_result_gen;
+END_RCPP
+}
 // temporal_beta_core
 DataFrame temporal_beta_core(LogicalMatrix mat_pa1, LogicalMatrix mat_pa2);
 RcppExport SEXP _ecoocc_temporal_beta_core(SEXP mat_pa1SEXP, SEXP mat_pa2SEXP) {
@@ -31,6 +42,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_ecoocc_betadiversity_core", (DL_FUNC) &_ecoocc_betadiversity_core, 1},
+    {"_ecoocc_cooccurrence_core", (DL_FUNC) &_ecoocc_cooccurrence_core, 1},
     {"_ecoocc_temporal_beta_core", (DL_FUNC) &_ecoocc_temporal_beta_core, 2},
     {NULL, NULL, 0}
 };

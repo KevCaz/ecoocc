@@ -12,7 +12,7 @@
 #' @param site_names string vector giving the names of the sites.
 #'
 #' @return
-#' A data frame with desired output as columns. 
+#' A data frame with desired output as columns.
 #'
 #' @examples
 #' ec_temporal_betadiversity(rbind(c(1, 0), c(1, 1)), rbind(c(0, 1), c(1, 1)))

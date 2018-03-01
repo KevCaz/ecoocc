@@ -19,6 +19,23 @@ betadiversity_core <- function(mat_pa) {
     .Call('_ecoocc_betadiversity_core', PACKAGE = 'ecoocc', mat_pa)
 }
 
+#' @title Co-occurrence
+#'
+#' @description
+#' Compute the co-occurrence of all pairs of species.
+#'
+#' @author
+#' Kevin Cazelles
+#'
+#' @param mat_pa presence absence matrix (sites as rows and species as columns).
+#'
+#' @return
+#' A dataframe with all the combinaison of sites and the counts associated.
+#'
+cooccurrence_core <- function(mat_pa) {
+    .Call('_ecoocc_cooccurrence_core', PACKAGE = 'ecoocc', mat_pa)
+}
+
 #' @title Compute the beta diversity two set of sites
 #'
 #' @description
@@ -30,8 +47,6 @@ betadiversity_core <- function(mat_pa) {
 #'
 #' @param mat_pa1 presence absence matrix (sites as rows and species as columns) for time 1.
 #' @param mat_pa2 presence absence matrix for time 2.
-#'
-#' @importFrom magrittr %>%
 #'
 #' @return
 #' A dataframe with all the combinaison of sites and the counts associated.

@@ -13,8 +13,6 @@ using namespace Rcpp;
 //' @param mat_pa1 presence absence matrix (sites as rows and species as columns) for time 1.
 //' @param mat_pa2 presence absence matrix for time 2.
 //'
-//' @importFrom magrittr %>%
-//'
 //' @return
 //' A dataframe with all the combinaison of sites and the counts associated.
 //'

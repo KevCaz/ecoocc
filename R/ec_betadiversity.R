@@ -36,6 +36,7 @@
 
 ec_betadiversity <- function(mat_pa, methods = "bc", site_names = NULL) {
     mat <- as.matrix(mat_pa) > 0
+    stopifnot(nrow(mat) > 1)
     raw <- betadiversity_core(mat)
     # 
     if ("ra" %in% methods) {
