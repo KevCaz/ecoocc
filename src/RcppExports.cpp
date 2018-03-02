@@ -27,6 +27,34 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// test_cooccurrence_raw_core
+NumericVector test_cooccurrence_raw_core(IntegerVector ab, IntegerVector ac, IntegerVector a, int nsite);
+RcppExport SEXP _ecoocc_test_cooccurrence_raw_core(SEXP abSEXP, SEXP acSEXP, SEXP aSEXP, SEXP nsiteSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type ab(abSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type ac(acSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type nsite(nsiteSEXP);
+    rcpp_result_gen = Rcpp::wrap(test_cooccurrence_raw_core(ab, ac, a, nsite));
+    return rcpp_result_gen;
+END_RCPP
+}
+// test_cooccurrence_veech_core
+NumericVector test_cooccurrence_veech_core(IntegerVector ab, IntegerVector ac, IntegerVector a, int nsite);
+RcppExport SEXP _ecoocc_test_cooccurrence_veech_core(SEXP abSEXP, SEXP acSEXP, SEXP aSEXP, SEXP nsiteSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type ab(abSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type ac(acSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type a(aSEXP);
+    Rcpp::traits::input_parameter< int >::type nsite(nsiteSEXP);
+    rcpp_result_gen = Rcpp::wrap(test_cooccurrence_veech_core(ab, ac, a, nsite));
+    return rcpp_result_gen;
+END_RCPP
+}
 // temporal_beta_core
 DataFrame temporal_beta_core(LogicalMatrix mat_pa1, LogicalMatrix mat_pa2);
 RcppExport SEXP _ecoocc_temporal_beta_core(SEXP mat_pa1SEXP, SEXP mat_pa2SEXP) {
@@ -43,6 +71,8 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_ecoocc_betadiversity_core", (DL_FUNC) &_ecoocc_betadiversity_core, 1},
     {"_ecoocc_cooccurrence_core", (DL_FUNC) &_ecoocc_cooccurrence_core, 1},
+    {"_ecoocc_test_cooccurrence_raw_core", (DL_FUNC) &_ecoocc_test_cooccurrence_raw_core, 4},
+    {"_ecoocc_test_cooccurrence_veech_core", (DL_FUNC) &_ecoocc_test_cooccurrence_veech_core, 4},
     {"_ecoocc_temporal_beta_core", (DL_FUNC) &_ecoocc_temporal_beta_core, 2},
     {NULL, NULL, 0}
 };

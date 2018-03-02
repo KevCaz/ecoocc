@@ -2,24 +2,26 @@
 % Please edit documentation in R/ec_cooccurrence.R
 \name{ec_cooccurrence}
 \alias{ec_cooccurrence}
-\title{Compute the co-occurrence between all pairs of species}
+\title{Co-occurrence}
 \usage{
-ec_cooccurrence(mat_pa, species_names = NULL)
+ec_cooccurrence(mat_pa, species_names = NULL, test = NULL)
 }
 \arguments{
 \item{mat_pa}{presence absence matrix (sites as rows and species as columns).}
 
 \item{species_names}{string vector giving the names of the sites. If}
+
+\item{test}{test to be performed, takes one values among \code{ra} and \code{ve}.}
 }
 \value{
 A matrix with species combination and co-occurrence values associated.
 }
 \description{
-Compute the co-occurrence between all pair of species.
+Compute the co-occurrence between all pairs of species.
 }
 \examples{
-mat <- matrix(stats::runif(30)>.5, 10)
-ec_cooccurrence(mat)
+mat <- matrix(stats::runif(60000)>.4,  ncol = 6)
+out <- ec_cooccurrence(mat, test = c('ra', 've'))
 }
 \author{
 Kevin Cazelles
