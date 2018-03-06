@@ -90,7 +90,7 @@ NumericVector test_cooccurrence_veech_core(IntegerVector ab, IntegerVector ac,
     double tmp1, tmp2;
     sz = a.size();
     NumericVector zscore(sz);
-    tmp1 = 1/(1.0*nsite*(nsite-1));
+    tmp1 = sqrt(nsite*(nsite-1));
 
     for (k=0; k<sz; k++) {
       mn = ab(k);
@@ -99,7 +99,7 @@ NumericVector test_cooccurrence_veech_core(IntegerVector ab, IntegerVector ac,
         mx = ac(k);
       } else mn = ac(k);
       tmp2 = mx*mn/(1.0*nsite);
-      zscore(k) = (a(k) - tmp2)/sqrt(tmp2*tmp1*(nsite-mn)*(nsite-mx));
+      zscore(k) = tmp1*(a(k) - tmp2)/sqrt(tmp2*(nsite-mn)*(nsite-mx));
     }
 
     return(zscore);
