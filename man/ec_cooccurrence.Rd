@@ -20,8 +20,10 @@ A matrix with species combination and co-occurrence values associated.
 Compute the co-occurrence between all pairs of species.
 }
 \examples{
-mat <- matrix(stats::runif(60000)>.4,  ncol = 6)
+mat <- matrix(stats::runif(60000)>.8,  ncol = 6)
 out <- ec_cooccurrence(mat, test = c('ra', 've'))
+plot(out$zs_raw*sqrt(0.8), out$zs_veech)
+abline(0,1)
 }
 \author{
 Kevin Cazelles
