@@ -11,9 +11,8 @@ r_github_packages:
 before_install:
   - sudo apt-get update
 
-# apt_packages:
-#   - r-cran-matrix
-#   - r-cran-rcpp
+apt_packages:
+  - r-cran-rcpp
 #   - r-cran-rcpparmadillo
 
 after_success:
