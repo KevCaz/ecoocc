@@ -19,41 +19,41 @@ using namespace Rcpp;
 
 DataFrame betadiversity_core(LogicalMatrix mat_pa) {
 
-  int i, j, k, l, sz;
-  sz = .5*mat_pa.nrow()*(mat_pa.nrow()-1);
-  IntegerVector site1(sz), site2(sz), a(sz), b(sz), c(sz), d(sz);
+        int i, j, k, l, sz;
+        sz = .5*mat_pa.nrow()*(mat_pa.nrow()-1);
+        IntegerVector site1(sz), site2(sz), a(sz), b(sz), c(sz), d(sz);
 
-  k = 0;
-  for (i=0; i<mat_pa.nrow()-1; i++) {
-    for (j=i+1; j<mat_pa.nrow(); j++) {
-      for (l=0; l<mat_pa.ncol(); l++) {
-        if (mat_pa(i,l)) {
-          if (mat_pa(j,l)) {
-            a(k)++;
-          } else {
-            b(k)++;
-          }
-        } else{
-          if (mat_pa(j,l)) {
-            c(k)++;
-          } else{
-            d(k)++;
-          }
+        k = 0;
+        for (i=0; i<mat_pa.nrow()-1; i++) {
+                for (j=i+1; j<mat_pa.nrow(); j++) {
+                        for (l=0; l<mat_pa.ncol(); l++) {
+                                if (mat_pa(i,l)) {
+                                        if (mat_pa(j,l)) {
+                                                a(k)++;
+                                        } else {
+                                                b(k)++;
+                                        }
+                                } else{
+                                        if (mat_pa(j,l)) {
+                                                c(k)++;
+                                        } else{
+                                                d(k)++;
+                                        }
+                                }
+                        }
+                        site1(k) = i+1;
+                        site2(k) = j+1;
+                        k++;
+                }
         }
-      }
-      site1(k) = i+1;
-      site2(k) = j+1;
-      k++;
-    }
-  }
 
-  return(DataFrame::create(
-    Named("site1") = site1,
-    Named("site2") = site2,
-    Named("site1_only") = b,
-    Named("site2_only") = c,
-    Named("both") = a,
-    Named("none") = d
-  ));
+        return(DataFrame::create(
+                       Named("site1") = site1,
+                       Named("site2") = site2,
+                       Named("site1_only") = b,
+                       Named("site2_only") = c,
+                       Named("both") = a,
+                       Named("none") = d
+                       ));
 
 }

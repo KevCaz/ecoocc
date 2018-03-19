@@ -44,6 +44,24 @@ test_cooccurrence_veech_core <- function(ab, ac, a, nsite) {
     .Call('_ecoocc_test_cooccurrence_veech_core', PACKAGE = 'ecoocc', ab, ac, a, nsite)
 }
 
+#' @title Compute rarefaction
+#'
+#' @description
+#' Compute the beta diversity between all sites for a specific presence-absence
+#' matrix.
+#'
+#' @author
+#' Kevin Cazelles
+#'
+#' @param mat_pa presence absence matrix (sites as rows and species as columns).
+#' @param nrep an integer specifying the number of repetition.
+#'
+NULL
+
+rarefaction_core <- function(mat_pa, nrep) {
+    .Call('_ecoocc_rarefaction_core', PACKAGE = 'ecoocc', mat_pa, nrep)
+}
+
 #' @title Compute the beta diversity two set of sites
 #'
 #' @description

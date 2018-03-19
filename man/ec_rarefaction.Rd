@@ -4,10 +4,10 @@
 \alias{ec_rarefaction}
 \title{Compute a rarefaction curve}
 \usage{
-ec_rarefaction(matpa, nrep = 100)
+ec_rarefaction(mat_pa, nrep = 100)
 }
 \arguments{
-\item{matpa}{presence absence matrix (sites as rows and species as columns).}
+\item{mat_pa}{presence absence matrix (sites as rows and species as columns).}
 
 \item{nrep}{number of replicates.}
 }
@@ -16,6 +16,10 @@ A matrix with rarefaction replicates as rows.
 }
 \description{
 Compute a rarefaction curve based on a presence-basence matrix.
+}
+\examples{
+mat <- matrix(stats::runif(20)>.5, 5)
+ec_rarefaction(mat, 10)
 }
 \references{
 Gotelli, Nicholas J., and Robert K. Colwell. Quantifying Biodiversity: Procedures and Pitfalls in the Measurement and Comparison of Species Richness. Ecology Letters (2001).

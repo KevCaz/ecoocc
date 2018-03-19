@@ -28,6 +28,15 @@ devtools::install_github("KevCaz/ecoocc")
  ```
 
 
+### rarefaction (Rcpp)
+
+```{r, results = "hold"}
+(mat <- matrix(stats::runif(20)>.5, 5))
+ec_rarefaction(mat, 6)
+ ```
+
+
+
 - temporal betadiversity (Rcpp)
-- rarefaction (R)
+
 - occurrence (Rcpp)

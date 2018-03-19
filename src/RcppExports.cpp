@@ -55,6 +55,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rarefaction_core
+IntegerMatrix rarefaction_core(LogicalMatrix mat_pa, int nrep);
+RcppExport SEXP _ecoocc_rarefaction_core(SEXP mat_paSEXP, SEXP nrepSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< LogicalMatrix >::type mat_pa(mat_paSEXP);
+    Rcpp::traits::input_parameter< int >::type nrep(nrepSEXP);
+    rcpp_result_gen = Rcpp::wrap(rarefaction_core(mat_pa, nrep));
+    return rcpp_result_gen;
+END_RCPP
+}
 // temporal_beta_core
 DataFrame temporal_beta_core(LogicalMatrix mat_pa1, LogicalMatrix mat_pa2);
 RcppExport SEXP _ecoocc_temporal_beta_core(SEXP mat_pa1SEXP, SEXP mat_pa2SEXP) {
@@ -73,6 +85,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_ecoocc_cooccurrence_core", (DL_FUNC) &_ecoocc_cooccurrence_core, 1},
     {"_ecoocc_test_cooccurrence_raw_core", (DL_FUNC) &_ecoocc_test_cooccurrence_raw_core, 4},
     {"_ecoocc_test_cooccurrence_veech_core", (DL_FUNC) &_ecoocc_test_cooccurrence_veech_core, 4},
+    {"_ecoocc_rarefaction_core", (DL_FUNC) &_ecoocc_rarefaction_core, 2},
     {"_ecoocc_temporal_beta_core", (DL_FUNC) &_ecoocc_temporal_beta_core, 2},
     {NULL, NULL, 0}
 };
