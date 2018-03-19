@@ -18,13 +18,19 @@
 #' Gotelli, Nicholas J., and Robert K. Colwell. Quantifying Biodiversity: Procedures and Pitfalls in the Measurement and Comparison of Species Richness. Ecology Letters (2001).
 #'
 #' @export
+#' @importFrom crayon blue
 #'
 #' @examples
-#' mat <- matrix(stats::runif(20)>.5, 5)
+#' mat <- matrix(stats::runif(40)>.4, 10)
 #' ec_rarefaction(mat, 10)
 
-ec_rarefaction <- function(mat_pa, nrep = 100) {
+ec_rarefaction <- function(mat_pa, nrep = 20) {
     mat <- as.matrix(mat_pa) > 0
     stopifnot(nrow(mat) > 1)
+    # 
+    id <- which(!apply(mat, 2, sum))
+    if (length(id)) 
+        warning(blue(paste0("In column ", paste0(id, collapse = ", "), " => 0 presence detected!")))
+    # 
     rarefaction_core(mat, nrep)
 }

@@ -4,7 +4,7 @@
 \alias{ec_rarefaction}
 \title{Compute a rarefaction curve}
 \usage{
-ec_rarefaction(mat_pa, nrep = 100)
+ec_rarefaction(mat_pa, nrep = 20)
 }
 \arguments{
 \item{mat_pa}{presence absence matrix (sites as rows and species as columns).}
@@ -18,7 +18,7 @@ A matrix with rarefaction replicates as rows.
 Compute a rarefaction curve based on a presence-basence matrix.
 }
 \examples{
-mat <- matrix(stats::runif(20)>.5, 5)
+mat <- matrix(stats::runif(40)>.4, 10)
 ec_rarefaction(mat, 10)
 }
 \references{

@@ -1,3 +1,5 @@
+context("Betadiversity")
+
 mat <- matrix(c(0,0,1,1,1,0), ncol = 2)
 res1 <- ec_betadiversity(mat)
 res2 <- ec_betadiversity(mat, "ra")

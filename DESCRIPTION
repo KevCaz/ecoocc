@@ -13,7 +13,8 @@ LinkingTo: Rcpp
 Imports:
     Rcpp (>= 0.12.7),
     magrittr,
-    utils
+    utils,
+    crayon
 Suggests:
     knitr,
     rmarkdown,

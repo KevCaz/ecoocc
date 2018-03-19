@@ -10,7 +10,7 @@ output:
 
 [![Build Status](https://travis-ci.org/KevCaz/ecoocc.svg?branch=master)](https://travis-ci.org/KevCaz/ecoocc)
 [![Build status](https://ci.appveyor.com/api/projects/status/qeywntin8yma0jb0?svg=true)](https://ci.appveyor.com/project/KevCaz/ecoocc)
-
+[![codecov](https://codecov.io/gh/KevCaz/ecoocc/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/ecoocc)
 
 ## Installation
 
@@ -31,7 +31,7 @@ devtools::install_github("KevCaz/ecoocc")
 ### rarefaction (Rcpp)
 
 ```{r, results = "hold"}
-(mat <- matrix(stats::runif(20)>.5, 5))
+(mat <- matrix(stats::runif(40)>.4, 10))
 ec_rarefaction(mat, 6)
  ```
 
