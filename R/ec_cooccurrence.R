@@ -28,32 +28,32 @@
 #'
 #' @references
 #' Veech, Joseph A. “A Probabilistic Model for Analysing Species Co-Occurrence:
-#' Probabilistic Model.” Edited by Pedro Peres-Neto. Global Ecology and
-#' Biogeography 22, no. 2 (February 2013): 252–60. https://doi.org/10.1111/j.1466-8238.2012.00789.x.
+#' Probabilistic Model.” Global Ecology and Biogeography 22, no. 2 (2013): 252–60.
+#' https://doi.org/10.1111/j.1466-8238.2012.00789.x.
 
 #' @examples
 #' mat <- matrix(stats::runif(60000)>.8,  ncol = 6)
-#' out <- ec_cooccurrence(mat, test = c('ra', 've'))
-#' plot(out$zs_raw*sqrt(0.8), out$zs_veech)
+#' out <- ec_cooccurrence(mat, test = c('bi', 'hy'))
+#' plot(out$zs_bi*sqrt(0.8), out$zs_hy)
 #' abline(0,1)
 
 ec_cooccurrence <- function(mat_pa, test = NULL, species_names = NULL) {
     mat <- as.matrix(mat_pa) > 0
     stopifnot(ncol(mat) > 1)
     out <- cooccurrence_core(mat)
-    # 
-    if ("bi" %in% test) 
-        out$zs_raw <- test_cooccurrence_binomial_core(out$case_sp1, out$case_sp2, 
+    #
+    if ("bi" %in% test)
+        out$zs_bi <- test_cooccurrence_binomial_core(out$case_sp1, out$case_sp2,
             out$case_11, nrow(mat))
-    if ("hy" %in% test) 
-        out$zs_veech <- test_cooccurrence_hypergeometric_core(out$case_sp1, out$case_sp2, 
+    if ("hy" %in% test)
+        out$zs_hy <- test_cooccurrence_hypergeometric_core(out$case_sp1, out$case_sp2,
             out$case_11, nrow(mat))
-    # 
+    #
     if (!is.null(species_names)) {
         stopifnot(length(species_names) == ncol(mat))
         out[1L] <- species_names[out[, 1L]]
         out[2L] <- species_names[out[, 2L]]
     }
-    # 
+    #
     out
 }

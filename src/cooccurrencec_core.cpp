@@ -66,16 +66,16 @@ DataFrame cooccurrence_core(LogicalMatrix mat_pa) {
 // [[Rcpp::export]]
 
 NumericVector test_cooccurrence_binomial_core(IntegerVector ab, IntegerVector ac,
-                                         IntegerVector a, int nsite) {
+                                              IntegerVector a, int nsite) {
 
         int k, sz;
         double inv_nsite, tmp;
         sz = a.size();
         NumericVector zscore(sz);
-        inv_nsite = 1/(1.0*nsite);
-
+        inv_nsite = 1/((double)nsite);
+        tmp = 0;
         for (k=0; k<sz; k++) {
-                tmp = ab(k)*ac(k)*inv_nsite;
+                tmp = inv_nsite*ab(k)*ac(k);
                 zscore(k) = (a(k) - tmp)/sqrt(tmp*(1-tmp*inv_nsite));
         }
 
@@ -87,7 +87,7 @@ NumericVector test_cooccurrence_binomial_core(IntegerVector ab, IntegerVector ac
 // [[Rcpp::export]]
 
 NumericVector test_cooccurrence_hypergeometric_core(IntegerVector ab, IntegerVector ac,
-                                           IntegerVector a, int nsite) {
+                                                    IntegerVector a, int nsite) {
 
         int k, sz, mn, mx, tmp;
         double tmp1, tmp2;
@@ -101,7 +101,7 @@ NumericVector test_cooccurrence_hypergeometric_core(IntegerVector ab, IntegerVec
                 if (ac(k)>ab(k)) {
                         mx = ac(k);
                 } else mn = ac(k);
-                tmp2 = mx*mn/(1.0*nsite);
+                tmp2 = (double)mx*mn/(1.0*nsite);
                 zscore(k) = tmp1*(a(k) - tmp2)/sqrt(tmp2*(nsite-mn)*(nsite-mx));
         }
 
