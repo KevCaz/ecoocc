@@ -30,14 +30,14 @@ give very similar results.
 }
 \examples{
 mat <- matrix(stats::runif(60000)>.8,  ncol = 6)
-out <- ec_cooccurrence(mat, test = c('ra', 've'))
-plot(out$zs_raw*sqrt(0.8), out$zs_veech)
+out <- ec_cooccurrence(mat, test = c('bi', 'hy'))
+plot(out$zs_bi*sqrt(0.8), out$zs_hy)
 abline(0,1)
 }
 \references{
 Veech, Joseph A. “A Probabilistic Model for Analysing Species Co-Occurrence:
-Probabilistic Model.” Edited by Pedro Peres-Neto. Global Ecology and
-Biogeography 22, no. 2 (February 2013): 252–60. https://doi.org/10.1111/j.1466-8238.2012.00789.x.
+Probabilistic Model.” Global Ecology and Biogeography 22, no. 2 (2013): 252–60.
+https://doi.org/10.1111/j.1466-8238.2012.00789.x.
 }
 \author{
 Kevin Cazelles
