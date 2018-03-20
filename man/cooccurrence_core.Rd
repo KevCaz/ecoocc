@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{cooccurrence_core}
 \alias{cooccurrence_core}
-\title{Co-occurrence}
+\title{Co-occurrence analysis.}
 \usage{
 cooccurrence_core(mat_pa)
 }

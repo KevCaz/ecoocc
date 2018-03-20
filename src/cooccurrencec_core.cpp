@@ -1,7 +1,10 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-//' @title Co-occurrence
+
+//' @name cooccurrence_core
+//'
+//' @title Co-occurrence analysis.
 //'
 //' @description
 //' Compute the co-occurrence of all pairs of species.
@@ -62,7 +65,7 @@ DataFrame cooccurrence_core(LogicalMatrix mat_pa) {
 
 // [[Rcpp::export]]
 
-NumericVector test_cooccurrence_raw_core(IntegerVector ab, IntegerVector ac,
+NumericVector test_cooccurrence_binomial_core(IntegerVector ab, IntegerVector ac,
                                          IntegerVector a, int nsite) {
 
         int k, sz;
@@ -83,7 +86,7 @@ NumericVector test_cooccurrence_raw_core(IntegerVector ab, IntegerVector ac,
 
 // [[Rcpp::export]]
 
-NumericVector test_cooccurrence_veech_core(IntegerVector ab, IntegerVector ac,
+NumericVector test_cooccurrence_hypergeometric_core(IntegerVector ab, IntegerVector ac,
                                            IntegerVector a, int nsite) {
 
         int k, sz, mn, mx, tmp;

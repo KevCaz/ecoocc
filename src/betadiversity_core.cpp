@@ -1,6 +1,8 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+//' @name betadiversity_core
+//'
 //' @title Compute the beta diversity between all sites
 //'
 //' @description

@@ -1,6 +1,8 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+//' @name rarefaction_core
+//'
 //' @title Compute rarefaction
 //'
 //' @description

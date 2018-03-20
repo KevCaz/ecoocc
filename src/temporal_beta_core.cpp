@@ -1,6 +1,8 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+//' @name temporal_beta_core
+//'
 //' @title Compute the beta diversity two set of sites
 //'
 //' @description

@@ -1,7 +1,7 @@
 #' @title Compute the beta diversity between all sites
 #'
 #' @description
-#' Compute the beta diversity between all sites for a specific
+#' Compute the beta diversity between all pair of sites for a specific
 #' presence-absence matrix.
 #'
 #' @author
@@ -21,7 +21,6 @@
 #'
 #' @return
 #' A matrix with all the combinaison of site and the associated betadiv.
-#'
 #'
 #' @encoding latin1
 #'
