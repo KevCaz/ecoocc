@@ -9,9 +9,10 @@ res4 <- ec_betadiversity(mat2, c("bc", "wi"))
 
 test_that("expected errors", {
   expect_error(ec_betadiversity(c(1)), "nrow(mat) > 1 is not TRUE", fixed = TRUE)
+  expect_error(ec_betadiversity(mat, c("bcz")), "any(methods %in% c(\"ra\", \"bc\", \"wi\")) is not TRUE", fixed = TRUE)
 })
 
-test_that("check data frame names", {
+test_that("check data.frame names", {
   expect_true(all(names(res1) == c("site1", "site2", "bc")))
   expect_true(all(names(res2) == c("site1", "site2", "site1_only", "site2_only", "both", "none")))
   expect_true(all(names(res3) == c("site1", "site2", "bc", "wi")))
@@ -23,7 +24,7 @@ test_that("check raw", {
   expect_true(all(res2[1:2,3:6] == matrix(c(0,1,0,1,1,0,1,0), 2)))
 })
 
-test_that("check raw", {
+test_that("check bc and wi", {
   expect_true(all(res3$bc == c(0,1,1)))
   expect_true(all(res3$wi == c(0,1,1)))
   expect_true(all(res4$bc == c(1/3,1,1/3)))

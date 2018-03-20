@@ -23,9 +23,9 @@ Compute the beta diversity between all sites for a specific
 presence-absence matrix.
 }
 \details{
-Currently \code{ra} stands fpr raw and return the number of occurrence for
-the for scenarion (A, B, C, D). \code{bc} Bray-Curtis and \code{wi}
-Wishart.
+Currently \code{ra} stands for raw and returns the number of occurrence.
+Method \code{bc} implements the Bray-Curtis index and \code{wi} the
+Wishart one.
 }
 \examples{
 mat <- matrix(stats::runif(20)>.5, 10)

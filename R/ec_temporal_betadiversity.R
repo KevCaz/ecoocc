@@ -11,6 +11,11 @@
 #' Vaues should be taken among \code{ra}, \code{bc}, \code{wi} (see details).
 #' @param site_names string vector giving the names of the sites.
 #'
+#' @details
+#' Currently \code{ra} stands for raw and returns the number of occurrence.
+#' Method \code{bc} implements the Bray-Curtis index and \code{wi} the
+#' Wishart one.
+#'
 #' @return
 #' A data frame with desired output as columns.
 #'
@@ -23,6 +28,7 @@ ec_temporal_betadiversity <- function(mat_pa1, mat_pa2, methods = "bc", site_nam
     mat1 <- as.matrix(mat_pa1) > 0
     mat2 <- as.matrix(mat_pa2) > 0
     stopifnot(all(dim(mat1) == dim(mat2)))
+    stopifnot(any(methods %in% c("ra", "bc", "wi")))
     # 
     raw <- temporal_beta_core(mat1, mat2)
     # 

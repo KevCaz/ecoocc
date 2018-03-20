@@ -23,6 +23,11 @@ A data frame with desired output as columns.
 \description{
 Compute temporal betadiversity.
 }
+\details{
+Currently \code{ra} stands for raw and returns the number of occurrence.
+Method \code{bc} implements the Bray-Curtis index and \code{wi} the
+Wishart one.
+}
 \examples{
 ec_temporal_betadiversity(rbind(c(1, 0), c(1, 1)), rbind(c(0, 1), c(1, 1)))
 

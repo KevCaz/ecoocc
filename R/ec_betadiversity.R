@@ -14,13 +14,14 @@
 #'
 #' @importFrom magrittr %>%
 #'
+#' @details
+#' Currently \code{ra} stands for raw and returns the number of occurrence.
+#' Method \code{bc} implements the Bray-Curtis index and \code{wi} the
+#' Wishart one.
+#'
 #' @return
 #' A matrix with all the combinaison of site and the associated betadiv.
 #'
-#' @details
-#' Currently \code{ra} stands fpr raw and return the number of occurrence for
-#' the for scenarion (A, B, C, D). \code{bc} Bray-Curtis and \code{wi}
-#' Wishart.
 #'
 #' @encoding latin1
 #'
@@ -37,6 +38,7 @@
 ec_betadiversity <- function(mat_pa, methods = "bc", site_names = NULL) {
     mat <- as.matrix(mat_pa) > 0
     stopifnot(nrow(mat) > 1)
+    stopifnot(any(methods %in% c("ra", "bc", "wi")))
     raw <- betadiversity_core(mat)
     # 
     if ("ra" %in% methods) {
