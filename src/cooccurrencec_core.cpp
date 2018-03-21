@@ -93,7 +93,7 @@ NumericVector test_cooccurrence_hypergeometric_core(IntegerVector ab, IntegerVec
         double tmp1, tmp2;
         sz = a.size();
         NumericVector zscore(sz);
-        tmp1 = sqrt(nsite*(nsite-1));
+        tmp1 = (double)nsite*sqrt(1 - 1/(double)nsite);
 
         for (k=0; k<sz; k++) {
                 mn = ab(k);
@@ -101,7 +101,7 @@ NumericVector test_cooccurrence_hypergeometric_core(IntegerVector ab, IntegerVec
                 if (ac(k)>ab(k)) {
                         mx = ac(k);
                 } else mn = ac(k);
-                tmp2 = (double)mx*mn/(1.0*nsite);
+                tmp2 = (double)mx*mn/((double)nsite);
                 zscore(k) = tmp1*(a(k) - tmp2)/sqrt(tmp2*(nsite-mn)*(nsite-mx));
         }
 

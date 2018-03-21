@@ -9,7 +9,9 @@
 #' @param mat_pa presence absence matrix (sites as rows and species as columns).
 #' @param species_names string vector giving the names of the sites. If
 # , \code{NULL} a numerical sequence is used.
-#' @param test test to be performed, takes one values among \code{bi} and \code{hy} (see details).
+#' @param test test to be performed. Currenlty \code{bi} and \code{hy}
+#' are available (see details). Default is set to \code{NULL}, meaning
+#' no test is performed.
 #'
 #' @details
 #' Currently \code{bi} tests the presence of a significant value of occurrence
@@ -31,9 +33,9 @@
 #' Probabilistic Model. Global Ecology and Biogeography (2013).
 
 #' @examples
-#' mat <- matrix(stats::runif(60000)>.8,  ncol = 6)
+#' mat <- matrix(stats::runif(60000)>.2,  ncol = 6)
 #' out <- ec_cooccurrence(mat, test = c('bi', 'hy'))
-#' plot(out$zs_bi*sqrt(0.8), out$zs_hy)
+#' plot(out$zs_bi*sqrt(1/0.2), out$zs_hy)
 #' abline(0,1)
 
 ec_cooccurrence <- function(mat_pa, test = NULL, species_names = NULL) {
