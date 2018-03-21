@@ -22,7 +22,7 @@ mat <- matrix(stats::runif(40)>.4, 10)
 ec_rarefaction(mat, 10)
 }
 \references{
-Gotelli, Nicholas J., and Robert K. Colwell. Quantifying Biodiversity: Procedures and Pitfalls in the Measurement and Comparison of Species Richness. Ecology Letters (2001).
+Gotelli, N. J., and Robert K. C.. Quantifying Biodiversity: Procedures and Pitfalls in the Measurement and Comparison of Species Richness. Ecology Letters (2001).
 }
 \author{
 Kevin Cazelles

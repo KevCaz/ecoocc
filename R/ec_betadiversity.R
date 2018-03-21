@@ -25,9 +25,12 @@
 #' @encoding latin1
 #'
 #' @references
-#' Legendre, Pierre, and Miquel De Cáceres. Beta Diversity as the Variance of Community Data: Dissimilarity Coefficients and Partitioning. Ecology Letters (2013)
-#' Koleff, P., Gaston, K. J. & Lennon, J. J. Measuring beta diversity for presence-absence data. Journal of Animal Ecology (2003).
-#'
+#' \itemize{
+#'   \item Legendre, P., and De Cáceres M.. Beta Diversity as the Variance of Community
+#'      Data: Dissimilarity Coefficients and Partitioning. Ecology Letters (2013).
+#'   \item Koleff, P., Gaston, K. J. & Lennon, J. J. Measuring beta diversity for presence-absence data. Journal of Animal Ecology (2003).
+#' }
+#' 
 #' @examples
 #' mat <- matrix(stats::runif(20)>.5, 10)
 #' ec_betadiversity(mat)
