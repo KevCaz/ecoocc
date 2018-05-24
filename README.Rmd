@@ -7,6 +7,9 @@ output:
 
 # ecoocc
 
+A Rcpp implementation of various computations done on presence/absence
+matrices.
+
 
 ## Status
 

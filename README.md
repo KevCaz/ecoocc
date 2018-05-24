@@ -1,6 +1,9 @@
 ecoocc
 ======
 
+A Rcpp implementation of various computations done on presence/absence
+matrices.
+
 Status
 ------
 
@@ -24,43 +27,43 @@ What is implemented so far?
      ec_betadiversity(mat)
 
     ##       [,1]  [,2]  [,3]
-    ## [1,] FALSE  TRUE FALSE
-    ## [2,]  TRUE FALSE FALSE
-    ## [3,] FALSE  TRUE FALSE
-    ## [4,] FALSE FALSE  TRUE
-    ## [5,]  TRUE  TRUE FALSE
-    ##    site1 site2        bc
-    ## 1      1     2 1.0000000
-    ## 2      1     3 0.0000000
-    ## 3      1     4 1.0000000
-    ## 4      1     5 0.3333333
-    ## 5      2     3 1.0000000
-    ## 6      2     4 1.0000000
-    ## 7      2     5 0.3333333
-    ## 8      3     4 1.0000000
-    ## 9      3     5 0.3333333
-    ## 10     4     5 1.0000000
+    ## [1,] FALSE FALSE FALSE
+    ## [2,]  TRUE FALSE  TRUE
+    ## [3,] FALSE FALSE FALSE
+    ## [4,]  TRUE  TRUE FALSE
+    ## [5,] FALSE FALSE FALSE
+    ##    site1 site2  bc
+    ## 1      1     2 1.0
+    ## 2      1     3 NaN
+    ## 3      1     4 1.0
+    ## 4      1     5 NaN
+    ## 5      2     3 1.0
+    ## 6      2     4 0.5
+    ## 7      2     5 1.0
+    ## 8      3     4 1.0
+    ## 9      3     5 NaN
+    ## 10     4     5 1.0
 
 ### Rarefaction
 
     (mat <- matrix(stats::runif(40)>.2, 10))
     ec_rarefaction(mat, 6)
 
-    ##        [,1]  [,2]  [,3]  [,4]
-    ##  [1,]  TRUE FALSE  TRUE  TRUE
-    ##  [2,]  TRUE FALSE  TRUE  TRUE
-    ##  [3,]  TRUE  TRUE  TRUE  TRUE
-    ##  [4,] FALSE  TRUE  TRUE  TRUE
-    ##  [5,]  TRUE  TRUE  TRUE  TRUE
-    ##  [6,] FALSE  TRUE  TRUE  TRUE
-    ##  [7,] FALSE  TRUE  TRUE  TRUE
-    ##  [8,]  TRUE FALSE  TRUE FALSE
-    ##  [9,]  TRUE  TRUE  TRUE  TRUE
-    ## [10,]  TRUE  TRUE FALSE  TRUE
+    ##       [,1]  [,2]  [,3]  [,4]
+    ##  [1,] TRUE  TRUE  TRUE FALSE
+    ##  [2,] TRUE  TRUE  TRUE  TRUE
+    ##  [3,] TRUE FALSE  TRUE FALSE
+    ##  [4,] TRUE FALSE  TRUE  TRUE
+    ##  [5,] TRUE  TRUE  TRUE FALSE
+    ##  [6,] TRUE  TRUE  TRUE  TRUE
+    ##  [7,] TRUE  TRUE  TRUE FALSE
+    ##  [8,] TRUE  TRUE  TRUE  TRUE
+    ##  [9,] TRUE  TRUE  TRUE  TRUE
+    ## [10,] TRUE  TRUE FALSE  TRUE
     ##       [,1] [,2] [,3] [,4] [,5] [,6]
-    ##  [1,]    4    4    3    4    3    2
-    ##  [2,]    4    4    4    4    3    4
-    ##  [3,]    4    4    4    4    3    4
+    ##  [1,]    4    3    3    3    4    4
+    ##  [2,]    4    4    4    3    4    4
+    ##  [3,]    4    4    4    4    4    4
     ##  [4,]    4    4    4    4    4    4
     ##  [5,]    4    4    4    4    4    4
     ##  [6,]    4    4    4    4    4    4
