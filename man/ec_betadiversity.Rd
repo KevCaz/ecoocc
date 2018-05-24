@@ -11,7 +11,7 @@ ec_betadiversity(mat_pa, methods = "bc", site_names = NULL)
 \item{mat_pa}{presence absence matrix (sites as rows and species as columns).}
 
 \item{methods}{a vector of two-letters strings describing the methods te be used.
-Values should be taken among \code{ra}, \code{bc}, \code{wi} (see details).}
+Values should be taken among \code{ra}, \code{bc}, \code{wi} and \code{ja} (see details).}
 
 \item{site_names}{string vector giving the names of the sites. If \code{NULL} a numerical sequence is used.}
 }
@@ -24,8 +24,12 @@ presence-absence matrix.
 }
 \details{
 Currently \code{ra} stands for raw and returns the number of occurrence.
-Method \code{bc} implements the Bray-Curtis index and \code{wi} the
-Wishart one.
+Additionnal values are
+\itemize{
+\item \code{bc}: Bray-Curtis index,
+\item \code{wi}: Wishart index,
+\item \code{ja}: Jaccard index.
+}
 }
 \examples{
 mat <- matrix(stats::runif(20)>.5, 10)
@@ -34,9 +38,9 @@ ec_betadiversity(mat)
 }
 \references{
 \itemize{
-  \item Legendre, P., and De Cáceres M.. Beta Diversity as the Variance of Community
-     Data: Dissimilarity Coefficients and Partitioning. Ecology Letters (2013).
-  \item Koleff, P., Gaston, K. J. & Lennon, J. J. Measuring beta diversity for presence-absence data. Journal of Animal Ecology (2003).
+\item Legendre, P., and De Cáceres M.. Beta Diversity as the Variance of Community
+Data: Dissimilarity Coefficients and Partitioning. Ecology Letters (2013).
+\item Koleff, P., Gaston, K. J. & Lennon, J. J. Measuring beta diversity for presence-absence data. Journal of Animal Ecology (2003).
 }
 }
 \author{

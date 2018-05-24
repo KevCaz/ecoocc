@@ -6,8 +6,7 @@ using namespace Rcpp;
 //' @title Compute rarefaction
 //'
 //' @description
-//' Compute the beta diversity between all sites for a specific presence-absence
-//' matrix.
+//' Compute the rarefaction curve for a given presence-absence matrix. 
 //'
 //' @author
 //' Kevin Cazelles
