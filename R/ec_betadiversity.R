@@ -44,22 +44,22 @@ ec_betadiversity <- function(mat_pa, methods = "bc", site_names = NULL) {
     stopifnot(nrow(mat) > 1)
     stopifnot(any(methods %in% c("ra", "bc", "wi", "ja")))
     raw <- betadiversity_core(mat)
-    #
+    # 
     if ("ra" %in% methods) {
         out <- raw
     } else {
         out <- raw[, 1L:2L]
     }
-    #
+    # 
     if (!is.null(site_names)) {
         stopifnot(length(site_names) == nrow(mat_pa))
         out[1L] <- site_names[out[, 1L]]
         out[2L] <- site_names[out[, 2L]]
     }
-    #
+    # 
     tmp <- raw[, 3L:6L]
     tmp_ab <- tmp[, 1L] + tmp[, 2L]
-    #
+    # 
     if ("bc" %in% methods) {
         out$bc <- tmp_ab/(tmp_ab + tmp[, 3L] + tmp[, 3L])
     }
@@ -69,6 +69,6 @@ ec_betadiversity <- function(mat_pa, methods = "bc", site_names = NULL) {
     if ("ja" %in% methods) {
         out$ja <- tmp[, 3L]/(tmp_ab + tmp[, 3L])
     }
-
+    
     out
 }
