@@ -6,7 +6,7 @@ res1 <- ec_temporal_betadiversity(mat1, mat2)
 res2 <- ec_temporal_betadiversity(mat1, mat2, c("ra", "bc", "wi"), site_names = LETTERS[1:3])
 
 test_that("expected errors", {
-  expect_error(ec_temporal_betadiversity(mat1, mat2, "bcz"), "any(methods %in% c(\"ra\", \"bc\", \"wi\")) is not TRUE", fixed = TRUE)
+  expect_error(ec_temporal_betadiversity(mat1, mat2, "bcz"), "any(methods %in% c(\"ra\", \"bc\", \"wi\", \"ja\")) is not TRUE", fixed = TRUE)
   expect_error(ec_temporal_betadiversity(mat1, mat2[-1,]), "all(dim(mat1) == dim(mat2)) is not TRUE", fixed = TRUE)
 })
 

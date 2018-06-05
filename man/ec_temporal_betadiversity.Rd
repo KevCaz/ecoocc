@@ -13,7 +13,7 @@ ec_temporal_betadiversity(mat_pa1, mat_pa2, methods = "bc",
 \item{mat_pa2}{a presence-absence matrix at time 2.}
 
 \item{methods}{a vector of two-letters strings describing the methods te be used.
-Vaues should be taken among \code{ra}, \code{bc}, \code{wi} (see details).}
+Vaues should be taken among \code{ra}, \code{bc}, \code{ja}, \code{wi} (see details).}
 
 \item{site_names}{string vector giving the names of the sites.}
 }
@@ -25,8 +25,12 @@ Compute temporal betadiversity.
 }
 \details{
 Currently \code{ra} stands for raw and returns the number of occurrence.
-Method \code{bc} implements the Bray-Curtis index and \code{wi} the
-Wishart one.
+Additionnal values are
+\itemize{
+\item \code{bc}: Bray-Curtis index,
+\item \code{wi}: Wishart index,
+\item \code{ja}: Jaccard index.
+}
 }
 \examples{
 ec_temporal_betadiversity(rbind(c(1, 0), c(1, 1)), rbind(c(0, 1), c(1, 1)))
