@@ -29,5 +29,5 @@ test_that("expected values", {
 })
 
 test_that("asymptotic behaviour", {
-  expect_true(stats::cor(res2$zs_hy, res2$zs_bi)>.9999)
+  expect_true(stats::cor(res2$zs_hy, res2$zs_bi) > .9999)
 })

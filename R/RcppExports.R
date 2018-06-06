@@ -40,12 +40,12 @@ cooccurrence_core <- function(mat_pa) {
     .Call('_ecoocc_cooccurrence_core', PACKAGE = 'ecoocc', mat_pa)
 }
 
-test_cooccurrence_binomial_core <- function(ab, ac, a, nsite) {
-    .Call('_ecoocc_test_cooccurrence_binomial_core', PACKAGE = 'ecoocc', ab, ac, a, nsite)
+test_cooc_binomial_core <- function(ab, ac, a, nsite) {
+    .Call('_ecoocc_test_cooc_binomial_core', PACKAGE = 'ecoocc', ab, ac, a, nsite)
 }
 
-test_cooccurrence_hypergeometric_core <- function(ab, ac, a, nsite) {
-    .Call('_ecoocc_test_cooccurrence_hypergeometric_core', PACKAGE = 'ecoocc', ab, ac, a, nsite)
+test_cooc_hypergeom_core <- function(ab, ac, a, nsite) {
+    .Call('_ecoocc_test_cooc_hypergeom_core', PACKAGE = 'ecoocc', ab, ac, a, nsite)
 }
 
 #' @name rarefaction_core

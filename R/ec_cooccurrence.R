@@ -44,11 +44,11 @@ ec_cooccurrence <- function(mat_pa, test = NULL, species_names = NULL) {
     out <- cooccurrence_core(mat)
     # 
     if ("bi" %in% test) 
-        out$zs_bi <- test_cooccurrence_binomial_core(out$case_sp1, out$case_sp2, 
-            out$case_11, nrow(mat))
+        out$zs_bi <- test_cooc_binomial_core(out$case_sp1, out$case_sp2, out$case_11, 
+            nrow(mat))
     if ("hy" %in% test) 
-        out$zs_hy <- test_cooccurrence_hypergeometric_core(out$case_sp1, out$case_sp2, 
-            out$case_11, nrow(mat))
+        out$zs_hy <- test_cooc_hypergeom_core(out$case_sp1, out$case_sp2, out$case_11, 
+            nrow(mat))
     # 
     if (!is.null(species_names)) {
         stopifnot(length(species_names) == ncol(mat))
