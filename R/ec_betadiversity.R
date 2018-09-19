@@ -9,13 +9,13 @@
 #'
 #' @param mat_pa presence absence matrix (sites as rows and species as columns).
 #' @param methods a vector of two-letters strings describing the methods te be used.
-#' Values should be taken among \code{ra}, \code{bc}, \code{wi} and \code{ja} (see details).
-#' @param site_names string vector giving the names of the sites. If \code{NULL} a numerical sequence is used.
+#' Values should be taken among `ra`, `bc`, `wi` and `ja` (see details).
+#' @param site_names string vector giving the names of the sites. If `NULL` a numerical sequence is used.
 #'
 #' @importFrom magrittr %>%
 #'
 #' @details
-#' Currently \code{ra} stands for raw and returns the number of occurrence.
+#' Currently `ra` stands for raw and returns the number of occurrence.
 #' Additionnal values are
 #' - `bc`: Bray-Curtis index,
 #' - `wi`: Wishart index,

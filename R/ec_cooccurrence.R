@@ -8,17 +8,17 @@
 #'
 #' @param mat_pa presence absence matrix (sites as rows and species as columns).
 #' @param species_names string vector giving the names of the sites. If
-# , \code{NULL} a numerical sequence is used.
-#' @param test test to be performed. Currenlty \code{bi} and \code{hy}
-#' are available (see details). Default is set to \code{NULL}, meaning
+# , `NULL` a numerical sequence is used.
+#' @param test test to be performed. Currenlty `bi` and `hy`
+#' are available (see details). Default is set to `NULL`, meaning
 #' no test is performed.
 #'
 #' @details
-#' Currently \code{bi} tests the presence of a significant value of occurrence
-#' assuming species occurrence are independant binomial distribution. \code{by}
+#' Currently `bi` tests the presence of a significant value of occurrence
+#' assuming species occurrence are independant binomial distribution. `by`
 #' takes the limited number of sites into account by using an hypergeometric
 #' distribution (see Veech 2013). Note that if the number of sites is large and
-#' the occurrence of bith species relatively low, then \code{bi} and \code{hy}
+#' the occurrence of bith species relatively low, then `bi` and `hy`
 #' give very similar results.
 #'
 #' @export

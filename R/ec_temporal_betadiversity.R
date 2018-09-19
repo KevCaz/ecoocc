@@ -8,11 +8,11 @@
 #' @param mat_pa1 a presence-absence matrix at time 1.
 #' @param mat_pa2 a presence-absence matrix at time 2.
 #' @param methods a vector of two-letters strings describing the methods te be used.
-#' Vaues should be taken among \code{ra}, \code{bc}, \code{ja}, \code{wi} (see details).
+#' Vaues should be taken among `ra`, `bc`, `ja`, `wi` (see details).
 #' @param site_names string vector giving the names of the sites.
 #'
 #' @details
-#' Currently \code{ra} stands for raw and returns the number of occurrence.
+#' Currently `ra` stands for raw and returns the number of occurrence.
 #' Additionnal values are
 #' - `bc`: Bray-Curtis index,
 #' - `wi`: Wishart index,
