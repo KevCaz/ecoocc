@@ -3,7 +3,7 @@ context("Temporal betadiversity")
 mat1 <- rbind(c(1, 1), c(1, 0), c(0,0))
 mat2 <- rbind(c(0 ,1), c(0, 1), c(0,0))
 res1 <- ec_temporal_betadiversity(mat1, mat2)
-res2 <- ec_temporal_betadiversity(mat1, mat2, c("ra", "bc", "wi"), site_names = LETTERS[1:3])
+res2 <- ec_temporal_betadiversity(mat1, mat2, c("ra", "bc", "wi", "ja"), site_names = LETTERS[1:3])
 
 test_that("expected errors", {
   expect_error(ec_temporal_betadiversity(mat1, mat2, "bcz"), "any(methods %in% c(\"ra\", \"bc\", \"wi\", \"ja\")) is not TRUE", fixed = TRUE)
@@ -13,7 +13,7 @@ test_that("expected errors", {
 
 test_that("check data.frame names", {
   expect_true(all(names(res1) == c("site", "bc")))
-  expect_true(all(names(res2) == c("site", "site_t1_only", "site_t2_only", "both", "none", "bc", "wi")))
+  expect_true(all(names(res2) == c("site", "site_t1_only", "site_t2_only", "both", "none", "bc", "wi", "ja")))
 })
 
 test_that("check values", {
