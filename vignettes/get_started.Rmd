@@ -1,0 +1,36 @@
+---
+title: "Get started with ecoocc"
+author: "Kevin Cazelles"
+date: 10-09-2018
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Get started with  ecoocc}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+
+```{r setup, echo = FALSE}
+# NOT_CRAN <- TRUE
+NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
+knitr::opts_chunk$set(
+  purl = NOT_CRAN,
+  eval = NOT_CRAN,
+  fig.align = "center",
+  comment = "#> "
+)
+```
+
+## Context
+
+The goal of `ecooc` is to implement common ecological methods that deal
+with presence absence matrices. Performance was one of the most important
+feature the core of the function are therefore written in C++.
+
+
+## Rarefaction
+
+
+```{r}
+mat <- matrix(stats::runif(40)>.4, 10)
+ec_rarefaction(mat, 10)
+```
