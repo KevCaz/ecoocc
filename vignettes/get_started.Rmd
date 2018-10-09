@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
   fig.align = "center",
   comment = "#> "
 )
+library(ecoocc)
 ```
 
 ## Context
@@ -31,6 +32,7 @@ feature the core of the function are therefore written in C++.
 
 
 ```{r}
-mat <- matrix(stats::runif(40)>.4, 10)
-ec_rarefaction(mat, 10)
+mat <- matrix(stats::runif(2000)>.9, ncol = 20)
+res <- apply(ec_rarefaction(mat, 1000), 1, mean)
+plot(res, type = "l", lwd = 2)
 ```

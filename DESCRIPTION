@@ -21,6 +21,7 @@ Suggests:
     rmarkdown,
     testthat
 NeedsCompilation: yes
+Encoding: UTF-8
 VignetteBuilder: knitr
 License: GPL (>= 2)
 BugReports: https://github.com/KevCaz/ecoocc/issues
