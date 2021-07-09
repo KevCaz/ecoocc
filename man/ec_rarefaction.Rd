@@ -18,8 +18,9 @@ A matrix with rarefaction replicates as rows.
 Compute a rarefaction curve based on a presence-absence matrix.
 }
 \examples{
-mat <- matrix(stats::runif(40)>.4, 10)
-ec_rarefaction(mat, 10)
+mat <- ec_generate(20, 10, .4)
+res <- ec_rarefaction(mat, 100)
+plot(apply(res, 1, mean))
 }
 \references{
 Gotelli, N. J., and Robert K. C.. Quantifying Biodiversity: Procedures and Pitfalls in the Measurement and Comparison of Species Richness. Ecology Letters (2001).

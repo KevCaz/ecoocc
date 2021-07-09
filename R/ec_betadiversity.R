@@ -4,9 +4,6 @@
 #' Compute the beta diversity between all pair of sites for a specific
 #' presence-absence matrix.
 #'
-#' @author
-#' Kevin Cazelles
-#'
 #' @param mat_pa presence absence matrix (sites as rows and species as columns).
 #' @param methods a vector of two-letters strings describing the methods te be used.
 #' Values should be taken among `ra`, `bc`, `wi` and `ja` (see details).
@@ -20,7 +17,7 @@
 #' - `ja`: Jaccard index.
 #'
 #' @return
-#' A matrix with all the combinaison of site and the associated betadiv.
+#' A matrix with all the combinaison of site and the associated betadiversity.
 #'
 #' @encoding latin1
 #'
@@ -31,7 +28,7 @@
 #' 
 #'
 #' @examples
-#' mat <- matrix(stats::runif(20)>.5, 10)
+#' mat <- ec_generate(20, 10, .4)
 #' ec_betadiversity(mat)
 #'
 #' @export

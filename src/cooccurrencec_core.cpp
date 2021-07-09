@@ -15,7 +15,7 @@ using namespace Rcpp;
 //' @param mat_pa presence absence matrix (sites as rows and species as columns).
 //'
 //' @return
-//' A dataframe with all the combinaison of sites and the counts associated.
+//' A dataframe with all the combinaisons of sites and the counts associated.
 //'
 // [[Rcpp::export]]
 
@@ -89,7 +89,7 @@ NumericVector test_cooc_binomial_core(IntegerVector ab, IntegerVector ac,
 NumericVector test_cooc_hypergeom_core(IntegerVector ab, IntegerVector ac,
                                                     IntegerVector a, int nsite) {
 
-        int k, sz, mn, mx, tmp;
+        int k, sz, mn, mx;
         double tmp1, tmp2;
         sz = a.size();
         NumericVector zscore(sz);

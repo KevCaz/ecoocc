@@ -2,6 +2,7 @@
 
 export(ec_betadiversity)
 export(ec_cooccurrence)
+export(ec_generate)
 export(ec_rarefaction)
 export(ec_temporal_betadiversity)
 importFrom(Rcpp,evalCpp)
@@ -14,4 +15,5 @@ importFrom(crayon,blue)
 importFrom(crayon,green)
 importFrom(crayon,red)
 importFrom(crayon,yellow)
+importFrom(stats,rbinom)
 useDynLib(ecoocc)

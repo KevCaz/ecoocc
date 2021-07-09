@@ -16,7 +16,7 @@ Values should be taken among \code{ra}, \code{bc}, \code{wi} and \code{ja} (see 
 \item{site_names}{string vector giving the names of the sites. If \code{NULL} a numerical sequence is used.}
 }
 \value{
-A matrix with all the combinaison of site and the associated betadiv.
+A matrix with all the combinaison of site and the associated betadiversity.
 }
 \description{
 Compute the beta diversity between all pair of sites for a specific
@@ -32,7 +32,7 @@ Additional values are
 }
 }
 \examples{
-mat <- matrix(stats::runif(20)>.5, 10)
+mat <- ec_generate(20, 10, .4)
 ec_betadiversity(mat)
 
 }
@@ -42,7 +42,4 @@ ec_betadiversity(mat)
 Data: Dissimilarity Coefficients and Partitioning. Ecology Letters (2013).
 \item Koleff, P., Gaston, K. J. & Lennon, J. J. Measuring beta diversity for presence-absence data. Journal of Animal Ecology (2003).
 }
-}
-\author{
-Kevin Cazelles
 }

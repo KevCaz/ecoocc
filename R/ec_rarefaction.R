@@ -16,8 +16,9 @@
 #' @export
 #'
 #' @examples
-#' mat <- matrix(stats::runif(40)>.4, 10)
-#' ec_rarefaction(mat, 10)
+#' mat <- ec_generate(20, 10, .4)
+#' res <- ec_rarefaction(mat, 100)
+#' plot(apply(res, 1, mean))
 
 ec_rarefaction <- function(mat_pa, nrep = 20) {
     mat <- as.matrix(mat_pa) > 0
@@ -25,8 +26,10 @@ ec_rarefaction <- function(mat_pa, nrep = 20) {
     #
     id <- which(!apply(mat, 2, sum))
     if (length(id))
-        warning(crayon::blue(paste0("Species never present in column(s) ",
-          paste0(id, collapse = ", "))))
+        msgWarning(
+          "Species never present in column(s)",
+          paste0(id, collapse = ", ")
+        )
     #
     rarefaction_core(mat, nrep)
 }

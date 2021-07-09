@@ -10,12 +10,10 @@ test_that("expected error", {
 })
 
 test_that("expected warning", {
-  expect_warning(
-    ec_rarefaction(rbind(c(1,0), c(0,0))), "Species never present in column(s) 2", 
-    fixed = TRUE
+  expect_message(
+    ec_rarefaction(rbind(c(1,0), c(0,0)))
   )
 })
-
 
 test_that("expected dimensions", {
   expect_true(all(dim(res1) == c(2,1)))

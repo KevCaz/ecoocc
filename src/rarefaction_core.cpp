@@ -8,8 +8,6 @@ using namespace Rcpp;
 //' @description
 //' Compute the rarefaction curve for a given presence-absence matrix. 
 //'
-//' @author
-//' Kevin Cazelles
 //'
 //' @param mat_pa presence absence matrix (sites as rows and species as columns).
 //' @param nrep an integer specifying the number of repetition.

@@ -9,13 +9,10 @@
 #' Compute the beta diversity between all sites for a specific presence-absence
 #' matrix.
 #'
-#' @author
-#' Kevin Cazelles
-#'
 #' @param mat_pa presence absence matrix (sites as rows and species as columns).
 #'
 #' @return
-#' A dataframe with all the combinaison of site and the counts.
+#' A dataframe with all the combinaisons of site and the counts.
 #'
 betadiversity_core <- function(mat_pa) {
     .Call('_ecoocc_betadiversity_core', PACKAGE = 'ecoocc', mat_pa)
@@ -34,7 +31,7 @@ betadiversity_core <- function(mat_pa) {
 #' @param mat_pa presence absence matrix (sites as rows and species as columns).
 #'
 #' @return
-#' A dataframe with all the combinaison of sites and the counts associated.
+#' A dataframe with all the combinaisons of sites and the counts associated.
 #'
 cooccurrence_core <- function(mat_pa) {
     .Call('_ecoocc_cooccurrence_core', PACKAGE = 'ecoocc', mat_pa)
@@ -55,8 +52,6 @@ test_cooc_hypergeom_core <- function(ab, ac, a, nsite) {
 #' @description
 #' Compute the rarefaction curve for a given presence-absence matrix. 
 #'
-#' @author
-#' Kevin Cazelles
 #'
 #' @param mat_pa presence absence matrix (sites as rows and species as columns).
 #' @param nrep an integer specifying the number of repetition.
@@ -74,9 +69,6 @@ rarefaction_core <- function(mat_pa, nrep) {
 #' @description
 #' Compute the beta diversity between all sites for a specific presence-absence
 #' matrix.
-#'
-#' @author
-#' Kevin Cazelles
 #'
 #' @param mat_pa1 presence absence matrix (sites as rows and species as columns) for time 1.
 #' @param mat_pa2 presence absence matrix for time 2.

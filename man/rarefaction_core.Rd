@@ -11,6 +11,3 @@
 \description{
 Compute the rarefaction curve for a given presence-absence matrix.
 }
-\author{
-Kevin Cazelles
-}

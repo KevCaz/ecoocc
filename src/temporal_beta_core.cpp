@@ -9,9 +9,6 @@ using namespace Rcpp;
 //' Compute the beta diversity between all sites for a specific presence-absence
 //' matrix.
 //'
-//' @author
-//' Kevin Cazelles
-//'
 //' @param mat_pa1 presence absence matrix (sites as rows and species as columns) for time 1.
 //' @param mat_pa2 presence absence matrix for time 2.
 //'
@@ -22,7 +19,7 @@ using namespace Rcpp;
 
 DataFrame temporal_beta_core(LogicalMatrix mat_pa1, LogicalMatrix mat_pa2) {
 
-    int i, j, l, sz;
+    int i, j, sz;
     sz = mat_pa1.nrow(); //number of sites
     IntegerVector site(sz), a(sz), b(sz), c(sz), d(sz);
 

@@ -9,13 +9,10 @@ using namespace Rcpp;
 //' Compute the beta diversity between all sites for a specific presence-absence
 //' matrix.
 //'
-//' @author
-//' Kevin Cazelles
-//'
 //' @param mat_pa presence absence matrix (sites as rows and species as columns).
 //'
 //' @return
-//' A dataframe with all the combinaison of site and the counts.
+//' A dataframe with all the combinaisons of site and the counts.
 //'
 // [[Rcpp::export]]
 

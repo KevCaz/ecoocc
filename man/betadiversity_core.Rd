@@ -10,12 +10,9 @@ betadiversity_core(mat_pa)
 \item{mat_pa}{presence absence matrix (sites as rows and species as columns).}
 }
 \value{
-A dataframe with all the combinaison of site and the counts.
+A dataframe with all the combinaisons of site and the counts.
 }
 \description{
 Compute the beta diversity between all sites for a specific presence-absence
 matrix.
-}
-\author{
-Kevin Cazelles
 }

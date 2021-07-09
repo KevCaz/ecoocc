@@ -10,7 +10,7 @@ cooccurrence_core(mat_pa)
 \item{mat_pa}{presence absence matrix (sites as rows and species as columns).}
 }
 \value{
-A dataframe with all the combinaison of sites and the counts associated.
+A dataframe with all the combinaisons of sites and the counts associated.
 }
 \description{
 Compute the co-occurrence of all pairs of species.

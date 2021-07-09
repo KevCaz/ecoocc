@@ -18,6 +18,3 @@ A dataframe with all the combinaison of sites and the counts associated.
 Compute the beta diversity between all sites for a specific presence-absence
 matrix.
 }
-\author{
-Kevin Cazelles
-}
