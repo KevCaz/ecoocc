@@ -7,7 +7,7 @@ output:
 
 # ecoocc
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-
+[![R-CMD-check](https://github.com/KevCaz/ecoocc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/KevCaz/ecoocc/actions/workflows/R-CMD-check.yaml)
 
 A Rcpp implementation of various computations done on presence/absence
 matrices.
@@ -28,7 +28,7 @@ remotes::install_github("KevCaz/ecoocc")
 Once installed, load it and try it!
 
 ```{r}
-library(ecooc)
+library(ecoocc)
 ```
 
 ## What is implemented so far?

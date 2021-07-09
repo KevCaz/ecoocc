@@ -1,22 +1,25 @@
 ecoocc
 ======
 
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![R-CMD-check](https://github.com/KevCaz/ecoocc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/KevCaz/ecoocc/actions/workflows/R-CMD-check.yaml)
+
 A Rcpp implementation of various computations done on presence/absence
 matrices.
-
-Status
-------
-
-[![Build
-Status](https://travis-ci.org/KevCaz/ecoocc.svg?branch=master)](https://travis-ci.org/KevCaz/ecoocc)
-[![Build
-status](https://ci.appveyor.com/api/projects/status/qeywntin8yma0jb0?svg=true)](https://ci.appveyor.com/project/KevCaz/ecoocc)
-[![codecov](https://codecov.io/gh/KevCaz/ecoocc/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/ecoocc)
 
 Installation
 ------------
 
-    devtools::install_github("KevCaz/ecoocc")
+The simplest way to install this packages is to use the
+[`remotes`](https://CRAN.R-project.org/package=remotes) package
+
+    install.package("remotes")
+    remotes::install_github("KevCaz/ecoocc")
+
+Once installed, load it and try it!
+
+    library(ecoocc)
 
 What is implemented so far?
 ---------------------------
@@ -29,40 +32,40 @@ What is implemented so far?
     ##       [,1]  [,2]  [,3]
     ## [1,] FALSE FALSE FALSE
     ## [2,]  TRUE FALSE  TRUE
-    ## [3,] FALSE FALSE FALSE
-    ## [4,]  TRUE  TRUE FALSE
-    ## [5,] FALSE FALSE FALSE
-    ##    site1 site2  bc
-    ## 1      1     2 1.0
-    ## 2      1     3 NaN
-    ## 3      1     4 1.0
-    ## 4      1     5 NaN
-    ## 5      2     3 1.0
-    ## 6      2     4 0.5
-    ## 7      2     5 1.0
-    ## 8      3     4 1.0
-    ## 9      3     5 NaN
-    ## 10     4     5 1.0
+    ## [3,]  TRUE FALSE FALSE
+    ## [4,]  TRUE  TRUE  TRUE
+    ## [5,] FALSE FALSE  TRUE
+    ##    site1 site2        bc
+    ## 1      1     2 1.0000000
+    ## 2      1     3 1.0000000
+    ## 3      1     4 1.0000000
+    ## 4      1     5 1.0000000
+    ## 5      2     3 0.3333333
+    ## 6      2     4 0.2000000
+    ## 7      2     5 0.3333333
+    ## 8      3     4 0.5000000
+    ## 9      3     5 1.0000000
+    ## 10     4     5 0.5000000
 
 ### Rarefaction
 
     (mat <- matrix(stats::runif(40)>.2, 10))
     ec_rarefaction(mat, 6)
 
-    ##       [,1]  [,2]  [,3]  [,4]
-    ##  [1,] TRUE  TRUE  TRUE FALSE
-    ##  [2,] TRUE  TRUE  TRUE  TRUE
-    ##  [3,] TRUE FALSE  TRUE FALSE
-    ##  [4,] TRUE FALSE  TRUE  TRUE
-    ##  [5,] TRUE  TRUE  TRUE FALSE
-    ##  [6,] TRUE  TRUE  TRUE  TRUE
-    ##  [7,] TRUE  TRUE  TRUE FALSE
-    ##  [8,] TRUE  TRUE  TRUE  TRUE
-    ##  [9,] TRUE  TRUE  TRUE  TRUE
-    ## [10,] TRUE  TRUE FALSE  TRUE
+    ##        [,1]  [,2]  [,3] [,4]
+    ##  [1,]  TRUE  TRUE  TRUE TRUE
+    ##  [2,] FALSE  TRUE  TRUE TRUE
+    ##  [3,] FALSE FALSE FALSE TRUE
+    ##  [4,]  TRUE  TRUE  TRUE TRUE
+    ##  [5,]  TRUE  TRUE  TRUE TRUE
+    ##  [6,]  TRUE  TRUE FALSE TRUE
+    ##  [7,]  TRUE  TRUE  TRUE TRUE
+    ##  [8,]  TRUE FALSE  TRUE TRUE
+    ##  [9,] FALSE  TRUE  TRUE TRUE
+    ## [10,] FALSE  TRUE FALSE TRUE
     ##       [,1] [,2] [,3] [,4] [,5] [,6]
-    ##  [1,]    4    3    3    3    4    4
-    ##  [2,]    4    4    4    3    4    4
+    ##  [1,]    4    4    3    4    3    3
+    ##  [2,]    4    4    4    4    3    4
     ##  [3,]    4    4    4    4    4    4
     ##  [4,]    4    4    4    4    4    4
     ##  [5,]    4    4    4    4    4    4

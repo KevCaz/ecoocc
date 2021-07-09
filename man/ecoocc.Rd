@@ -5,11 +5,8 @@
 \alias{ecoocc}
 \title{ecoocc}
 \description{
-Coocurrence / occurrence and more.
+Occurrence, coccurrence and more.
 }
 \details{
 Ecological occurrence and more.
-}
-\author{
-Kevin Cazelles
 }
