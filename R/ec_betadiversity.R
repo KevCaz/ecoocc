@@ -1,4 +1,4 @@
-#' @title Compute the beta diversity between all sites
+#' Compute the beta diversity between all sites
 #'
 #' @description
 #' Compute the beta diversity between all pair of sites for a specific
@@ -12,11 +12,9 @@
 #' Values should be taken among `ra`, `bc`, `wi` and `ja` (see details).
 #' @param site_names string vector giving the names of the sites. If `NULL` a numerical sequence is used.
 #'
-#' @importFrom magrittr %>%
-#'
 #' @details
 #' Currently `ra` stands for raw and returns the number of occurrence.
-#' Additionnal values are
+#' Additional values are
 #' - `bc`: Bray-Curtis index,
 #' - `wi`: Wishart index,
 #' - `ja`: Jaccard index.
@@ -27,11 +25,10 @@
 #' @encoding latin1
 #'
 #' @references
-#' \itemize{
-#'   \item Legendre, P., and De Cáceres M.. Beta Diversity as the Variance of Community
+#' * Legendre, P., and De Cáceres M.. Beta Diversity as the Variance of Community
 #'      Data: Dissimilarity Coefficients and Partitioning. Ecology Letters (2013).
-#'   \item Koleff, P., Gaston, K. J. & Lennon, J. J. Measuring beta diversity for presence-absence data. Journal of Animal Ecology (2003).
-#' }
+#' * Koleff, P., Gaston, K. J. & Lennon, J. J. Measuring beta diversity for presence-absence data. Journal of Animal Ecology (2003).
+#' 
 #'
 #' @examples
 #' mat <- matrix(stats::runif(20)>.5, 10)
@@ -45,11 +42,7 @@ ec_betadiversity <- function(mat_pa, methods = "bc", site_names = NULL) {
     stopifnot(any(methods %in% c("ra", "bc", "wi", "ja")))
     raw <- betadiversity_core(mat)
     # 
-    if ("ra" %in% methods) {
-        out <- raw
-    } else {
-        out <- raw[, 1L:2L]
-    }
+    if ("ra" %in% methods) out <- raw else out <- raw[, 1L:2L]
     # 
     if (!is.null(site_names)) {
         stopifnot(length(site_names) == nrow(mat_pa))

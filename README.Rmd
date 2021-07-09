@@ -6,24 +6,30 @@ output:
 
 
 # ecoocc
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+
 
 A Rcpp implementation of various computations done on presence/absence
 matrices.
 
 
-## Status
-
-[![Build Status](https://travis-ci.org/KevCaz/ecoocc.svg?branch=master)](https://travis-ci.org/KevCaz/ecoocc)
-[![Build status](https://ci.appveyor.com/api/projects/status/qeywntin8yma0jb0?svg=true)](https://ci.appveyor.com/project/KevCaz/ecoocc)
-[![codecov](https://codecov.io/gh/KevCaz/ecoocc/branch/master/graph/badge.svg)](https://codecov.io/gh/KevCaz/ecoocc)
 
 
 ## Installation
 
+The simplest way to install this packages is to use the [`remotes`](https://CRAN.R-project.org/package=remotes) package
+
+
 ```R
-devtools::install_github("KevCaz/ecoocc")
+install.package("remotes")
+remotes::install_github("KevCaz/ecoocc")
 ```
 
+Once installed, load it and try it!
+
+```{r}
+library(ecooc)
+```
 
 ## What is implemented so far?
 

@@ -4,8 +4,7 @@
 \alias{ec_temporal_betadiversity}
 \title{Compute temporal betadiversity}
 \usage{
-ec_temporal_betadiversity(mat_pa1, mat_pa2, methods = "bc",
-  site_names = NULL)
+ec_temporal_betadiversity(mat_pa1, mat_pa2, methods = "bc", site_names = NULL)
 }
 \arguments{
 \item{mat_pa1}{a presence-absence matrix at time 1.}
@@ -35,7 +34,4 @@ Additionnal values are
 \examples{
 ec_temporal_betadiversity(rbind(c(1, 0), c(1, 1)), rbind(c(0, 1), c(1, 1)))
 
-}
-\author{
-Kevin Cazelles
 }

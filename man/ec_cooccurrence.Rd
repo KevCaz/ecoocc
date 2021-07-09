@@ -24,10 +24,10 @@ Compute the co-occurrence between all pairs of species.
 }
 \details{
 Currently \code{bi} tests the presence of a significant value of occurrence
-assuming species occurrence are independant binomial distribution. \code{by}
+assuming species occurrence are independent binomial distribution. \code{by}
 takes the limited number of sites into account by using an hypergeometric
 distribution (see Veech 2013). Note that if the number of sites is large and
-the occurrence of bith species relatively low, then \code{bi} and \code{hy}
+the occurrence of both species relatively low, then \code{bi} and \code{hy}
 give very similar results.
 }
 \examples{
@@ -39,7 +39,4 @@ abline(0,1)
 \references{
 Veech, J. A.. A Probabilistic Model for Analysing Species Co-Occurrence:
 Probabilistic Model. Global Ecology and Biogeography (2013).
-}
-\author{
-Kevin Cazelles
 }

@@ -2,8 +2,6 @@
 #'
 #' @description
 #' Compute temporal betadiversity.
-#' @author
-#' Kevin Cazelles
 #'
 #' @param mat_pa1 a presence-absence matrix at time 1.
 #' @param mat_pa2 a presence-absence matrix at time 2.

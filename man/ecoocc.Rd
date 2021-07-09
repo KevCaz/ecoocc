@@ -3,7 +3,6 @@
 \docType{package}
 \name{ecoocc}
 \alias{ecoocc}
-\alias{ecoocc-package}
 \title{ecoocc}
 \description{
 Coocurrence / occurrence and more.

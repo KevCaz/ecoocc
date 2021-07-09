@@ -3,8 +3,6 @@
 #' @description
 #' Compute the co-occurrence between all pairs of species.
 #'
-#' @author
-#' Kevin Cazelles
 #'
 #' @param mat_pa presence absence matrix (sites as rows and species as columns).
 #' @param species_names string vector giving the names of the sites. If
@@ -15,10 +13,10 @@
 #'
 #' @details
 #' Currently `bi` tests the presence of a significant value of occurrence
-#' assuming species occurrence are independant binomial distribution. `by`
+#' assuming species occurrence are independent binomial distribution. `by`
 #' takes the limited number of sites into account by using an hypergeometric
 #' distribution (see Veech 2013). Note that if the number of sites is large and
-#' the occurrence of bith species relatively low, then `bi` and `hy`
+#' the occurrence of both species relatively low, then `bi` and `hy`
 #' give very similar results.
 #'
 #' @export

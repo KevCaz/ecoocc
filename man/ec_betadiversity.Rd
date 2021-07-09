@@ -24,7 +24,7 @@ presence-absence matrix.
 }
 \details{
 Currently \code{ra} stands for raw and returns the number of occurrence.
-Additionnal values are
+Additional values are
 \itemize{
 \item \code{bc}: Bray-Curtis index,
 \item \code{wi}: Wishart index,

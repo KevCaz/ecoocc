@@ -10,7 +10,10 @@ test_that("expected error", {
 })
 
 test_that("expected warning", {
-  expect_warning(ec_rarefaction(rbind(c(1,0), c(0,0))), "In column 2 => 0 presence detected!", fixed = TRUE)
+  expect_warning(
+    ec_rarefaction(rbind(c(1,0), c(0,0))), "Species never present in column(s) 2", 
+    fixed = TRUE
+  )
 })
 
 
