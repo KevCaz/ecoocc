@@ -25,8 +25,6 @@ betadiversity_core <- function(mat_pa) {
 #' @description
 #' Compute the co-occurrence of all pairs of species.
 #'
-#' @author
-#' Kevin Cazelles
 #'
 #' @param mat_pa presence absence matrix (sites as rows and species as columns).
 #'

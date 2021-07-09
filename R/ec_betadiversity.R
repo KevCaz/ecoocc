@@ -1,4 +1,4 @@
-#' Compute the beta diversity between all sites
+#' Compute beta diversity
 #'
 #' @description
 #' Compute the beta diversity between all pair of sites for a specific
@@ -19,10 +19,8 @@
 #' @return
 #' A matrix with all the combinaison of site and the associated betadiversity.
 #'
-#' @encoding latin1
-#'
 #' @references
-#' * Legendre, P., and De Cáceres M.. Beta Diversity as the Variance of Community
+#' * Legendre, P., and De Caceres M.. Beta Diversity as the Variance of Community
 #'      Data: Dissimilarity Coefficients and Partitioning. Ecology Letters (2013).
 #' * Koleff, P., Gaston, K. J. & Lennon, J. J. Measuring beta diversity for presence-absence data. Journal of Animal Ecology (2003).
 #' 

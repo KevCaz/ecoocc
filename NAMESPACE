@@ -3,6 +3,7 @@
 export(ec_betadiversity)
 export(ec_cooccurrence)
 export(ec_generate)
+export(ec_overlap)
 export(ec_rarefaction)
 export(ec_temporal_betadiversity)
 importFrom(Rcpp,evalCpp)

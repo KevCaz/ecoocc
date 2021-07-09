@@ -9,8 +9,6 @@ using namespace Rcpp;
 //' @description
 //' Compute the co-occurrence of all pairs of species.
 //'
-//' @author
-//' Kevin Cazelles
 //'
 //' @param mat_pa presence absence matrix (sites as rows and species as columns).
 //'
@@ -35,7 +33,7 @@ DataFrame cooccurrence_core(LogicalMatrix mat_pa) {
                                         } else {
                                                 b(k)++;
                                         }
-                                } else{
+                                } else {
                                         if (mat_pa(l,j)) {
                                                 c(k)++;
                                         } else{

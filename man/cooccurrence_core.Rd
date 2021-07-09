@@ -15,6 +15,3 @@ A dataframe with all the combinaisons of sites and the counts associated.
 \description{
 Compute the co-occurrence of all pairs of species.
 }
-\author{
-Kevin Cazelles
-}
