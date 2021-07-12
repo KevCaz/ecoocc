@@ -16,7 +16,7 @@ Values should be taken among \code{ra}, \code{bc}, \code{wi} and \code{ja} (see 
 A matrix with all the combinaison of sites and the corresponding betadiversity.
 }
 \description{
-Compute the beta diversity between all pair of sites for a specific
+Compute the beta diversity between all pairs of sites for a specific
 presence-absence matrix.
 }
 \details{

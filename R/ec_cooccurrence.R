@@ -3,11 +3,8 @@
 #' @description
 #' Compute the co-occurrence between all pairs of species and descriptive metrics of the co-occurrence network.
 #'
-#'
-#' @param mat_pa presence absence matrix (sites as rows and species as columns).
-#' @param species_names string vector giving the names of the sites. If
-# , `NULL` a numerical sequence is used.
-#' @param test test to be performed. Currenlty `bi` and `hy`
+#' @param x a `pa` object or an R object to a coerced to one (see [ec_as_pa()]). 
+#' @param test test to be performed. Currently `bi` and `hy`
 #' are available (see details). Default is set to `NULL`, meaning
 #' no test is performed.
 #'
@@ -29,12 +26,12 @@
 #' plot(out$zs_bi*sqrt(1/0.2), out$zs_hy)
 #' abline(0,1)
 
-#' @describeIn ec_cooccurrence  A matrix with species combination and co-occurrence values associated.
+#' @describeIn ec_cooccurrence A matrix with species combination and co-occurrence values associated.
 
 #' @export
-ec_cooccurrence <- function(mat_pa, test = NULL, species_names = NULL) {
-    mat <- as.matrix(mat_pa) > 0
-    stopifnot(ncol(mat) > 1)
+ec_cooccurrence <- function(x, test = NULL) {
+  
+    mat <- ec_as_pa(x)
     out <- cooccurrence_core(mat)
     # 
     if ("bi" %in% test) 
@@ -44,11 +41,8 @@ ec_cooccurrence <- function(mat_pa, test = NULL, species_names = NULL) {
         out$zs_hy <- test_cooc_hypergeom_core(out$case_sp1, out$case_sp2, out$case_11, 
             nrow(mat))
     # 
-    if (!is.null(species_names)) {
-        stopifnot(length(species_names) == ncol(mat))
-        out[1L] <- species_names[out[, 1L]]
-        out[2L] <- species_names[out[, 2L]]
-    }
+    out[1L] <- colnames(mat)[out[, 1L]]
+    out[2L] <- colnames(mat)[out[, 2L]]
     # 
     out
 }
@@ -59,13 +53,15 @@ ec_cooccurrence <- function(mat_pa, test = NULL, species_names = NULL) {
 #' * `network_contribution` that includes the species contributions to network robustness, `robustness`, and the species sensitivity to the loss of links in the network, `sensitivity` (see Araujo 2011).
 #'
 #' @references
-#' Araujo, M. B., Rozenfeld, A., Rahbek, C., & Marquet, P. A. (2011). Using species co-occurrence networks to assess the impacts of climate change. Ecography, 34(6), 897–908. https://doi.org/10.1111/j.1600-0587.2011.06919.x
+#' * Araujo, M. B., Rozenfeld, A., Rahbek, C., & Marquet, P. A. (2011). Using species co-occurrence networks to assess the impacts of climate change. Ecography, 34(6), 897–908. https://doi.org/10.1111/j.1600-0587.2011.06919.x
 #' * Griffith, G. P., Strutton, P. G., & Semmens, J. M. (2018). Climate change alters stability and species potential interactions in a large marine ecosystem. Global Change Biology, 24(1), e90–e100. https://doi.org/10.1111/gcb.13891
 #'
 #' @export
+#' @examples
+#' mat <- ec_overlap(ec_generate(100, 10, .2))
 
-ec_overlap <- function(mat_pa) {
-  coo <- ec_cooccurrence(mat_pa)
+ec_overlap <- function(x) {
+  coo <- ec_cooccurrence(x)
   o12 <- coo[, 5] / coo[,6]
   o21 <- coo[, 5] / coo[,7]
   sim <- abs(o12 - o21) / max(o12, o21)

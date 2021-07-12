@@ -1,7 +1,7 @@
 #' Compute beta diversity
 #'
 #' @description
-#' Compute the beta diversity between all pair of sites for a specific
+#' Compute the beta diversity between all pairs of sites for a specific
 #' presence-absence matrix.
 #'
 #' @param x a `pa` object or an R object to a coerced to one (see [ec_as_pa()]). 
