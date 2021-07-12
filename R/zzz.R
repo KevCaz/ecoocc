@@ -40,5 +40,6 @@ msgSuccess <- function(..., appendLF = TRUE) {
 msgWarning <- function(..., appendLF = TRUE) {
   txt <- paste(cli::symbol$warning, ...)
   message(yellow(txt), appendLF = appendLF)
+  # warning(yellow(txt), appendLF = appendLF, call. = FALSE)
   invisible(txt)
 }

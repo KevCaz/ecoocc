@@ -3,8 +3,8 @@
 #' @description
 #' Compute temporal betadiversity.
 #'
-#' @param mat_pa1 a presence-absence matrix at time 1.
-#' @param mat_pa2 a presence-absence matrix at time 2.
+#' @param x1 a `pa` object representing a presence-absence matrix at time 1.
+#' @param x2 a `pa` object representing a presence-absence matrix at time 2.
 #' @param methods a vector of two-letters strings describing the methods te be used.
 #' Vaues should be taken among `ra`, `bc`, `ja`, `wi` (see details).
 #' @param site_names string vector giving the names of the sites.
@@ -24,9 +24,9 @@
 #'
 #' @export
 
-ec_temporal_betadiversity <- function(mat_pa1, mat_pa2, methods = "bc", site_names = NULL) {
-    mat1 <- as.matrix(mat_pa1) > 0
-    mat2 <- as.matrix(mat_pa2) > 0
+ec_temporal_betadiversity <- function(x1, x2, methods = "bc", site_names = NULL) {
+    mat1 <- ec_as_pa(x1)
+    mat2 <- ec_as_pa(x2)
     stopifnot(all(dim(mat1) == dim(mat2)))
     stopifnot(any(methods %in% c("ra", "bc", "wi", "ja")))
     # 

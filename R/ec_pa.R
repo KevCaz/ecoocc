@@ -16,15 +16,27 @@
 #'
 #' @export
 #' @examples 
-#' ec_pa(matrix(c(0,0,2,1,1,0), 3, 2), spc_name = "Lynx", sit_name = "ON_001") 
+#' ec_pa(matrix(c(0,0,0,1,1,0, 1,0,0), 3, 3), spc_name = "Lynx", sit_name = "ON_001") 
 
 ec_pa <- function(x, threshold = 0, spc_name = NULL, sit_name = NULL) {
     
   pa <- (as.matrix(x) > threshold) * 1 
   stopifnot(NROW(x) > 0 & NCOL(x) > 0)
   
-  rownames(pa) <- name_it(sit_name, NROW(x), "sit")
-  colnames(pa) <- name_it(spc_name, NCOL(x), "spc")
+  rownames(pa) <- name_it(sit_name, NROW(x), "sit", "sites")
+  colnames(pa) <- name_it(spc_name, NCOL(x), "spc", "species")
+  
+  id <- which(!apply(pa, 2, sum))
+  if (length(id)) {
+    msgWarning(
+      "No presence data for the following species:", 
+      paste0(id, collapse = ", ")
+    )
+  }
+  id <- which(!apply(pa, 1, sum))
+  if (length(id)) {
+    msgWarning("Empty site(s):", paste0(id, collapse = ", "))
+  }
   
   structure(
     pa,
@@ -36,7 +48,7 @@ ec_pa <- function(x, threshold = 0, spc_name = NULL, sit_name = NULL) {
 
 
 # 
-name_it <- function(val, len, what) {
+name_it <- function(val, len, what, w_name) {
   if (is.null(val)) {
     seq_string_zero(what, len, seq_len(len))
   } else {
@@ -46,13 +58,13 @@ name_it <- function(val, len, what) {
     } else {
       dif <- len - l_val
       if (dif > 0) {
-        msgWarning("Less names than", what, msg_plur(dif), "been added.")
+        msgInfo("Less names than", w_name, msg_plur(dif), "been added.")
         return(
           c(val, seq_string_zero(what, len, seq(l_val + 1, len)))
         )
         # 
       } else {
-        msgWarning("More names than", what, 
+        msgInfo("More names than", w_name, 
           "only the first", msg_plur(len), "been used.")
         return(val[seq_len(len)])
       }

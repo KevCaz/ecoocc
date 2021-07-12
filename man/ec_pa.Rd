@@ -28,5 +28,5 @@ The input \code{x} should be a presence absence matrix (sites as rows and specie
 If there are less names than species (or sites), or no names at all, then names will be automatically added. These names are created using column or row numbers (zero-padded to the number of digits of total the number of column or row), preceded by \code{spc_} for column and \code{sit_} for sites.
 }
 \examples{
-ec_pa(matrix(c(0,0,2,1,1,0), 3, 2), spc_name = "Lynx", sit_name = "ON_001") 
+ec_pa(matrix(c(0,0,0,1,1,0, 1,0,0), 3, 3), spc_name = "Lynx", sit_name = "ON_001") 
 }

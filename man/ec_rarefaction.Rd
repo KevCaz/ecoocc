@@ -4,10 +4,10 @@
 \alias{ec_rarefaction}
 \title{Compute a rarefaction curve}
 \usage{
-ec_rarefaction(mat_pa, nrep = 20)
+ec_rarefaction(x, nrep = 100)
 }
 \arguments{
-\item{mat_pa}{presence absence matrix (sites as rows and species as columns).}
+\item{x}{presence absence matrix (sites as rows and species as columns).}
 
 \item{nrep}{number of replicates.}
 }
@@ -19,7 +19,7 @@ Compute a rarefaction curve based on a presence-absence matrix.
 }
 \examples{
 mat <- ec_generate(20, 10, .4)
-res <- ec_rarefaction(mat, 100)
+res <- ec_rarefaction(mat, 1000)
 plot(apply(res, 1, mean))
 }
 \references{

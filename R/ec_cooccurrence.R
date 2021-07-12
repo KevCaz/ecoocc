@@ -5,7 +5,7 @@
 #'
 #' @param x a `pa` object or an R object to a coerced to one (see [ec_as_pa()]). 
 #' @param test test to be performed. Currently `bi` and `hy`
-#' are available (see details). Default is set to `NULL`, meaning
+#' are available (see details). Default is set to `NULL`, meaning that
 #' no test is performed.
 #'
 #' @details

@@ -4,12 +4,12 @@
 \alias{ec_temporal_betadiversity}
 \title{Compute temporal betadiversity}
 \usage{
-ec_temporal_betadiversity(mat_pa1, mat_pa2, methods = "bc", site_names = NULL)
+ec_temporal_betadiversity(x1, x2, methods = "bc", site_names = NULL)
 }
 \arguments{
-\item{mat_pa1}{a presence-absence matrix at time 1.}
+\item{x1}{a \code{pa} object representing a presence-absence matrix at time 1.}
 
-\item{mat_pa2}{a presence-absence matrix at time 2.}
+\item{x2}{a \code{pa} object representing a presence-absence matrix at time 2.}
 
 \item{methods}{a vector of two-letters strings describing the methods te be used.
 Vaues should be taken among \code{ra}, \code{bc}, \code{ja}, \code{wi} (see details).}

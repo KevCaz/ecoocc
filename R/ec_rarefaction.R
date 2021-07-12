@@ -3,8 +3,7 @@
 #' @description
 #' Compute a rarefaction curve based on a presence-absence matrix.
 #'
-#'
-#' @param mat_pa presence absence matrix (sites as rows and species as columns).
+#' @param x presence absence matrix (sites as rows and species as columns).
 #' @param nrep number of replicates.
 #'
 #' @return
@@ -17,19 +16,10 @@
 #'
 #' @examples
 #' mat <- ec_generate(20, 10, .4)
-#' res <- ec_rarefaction(mat, 100)
+#' res <- ec_rarefaction(mat, 1000)
 #' plot(apply(res, 1, mean))
 
-ec_rarefaction <- function(mat_pa, nrep = 20) {
-    mat <- as.matrix(mat_pa) > 0
-    stopifnot(nrow(mat) > 1)
-    #
-    id <- which(!apply(mat, 2, sum))
-    if (length(id))
-        msgWarning(
-          "Species never present in column(s)",
-          paste0(id, collapse = ", ")
-        )
-    #
+ec_rarefaction <- function(x, nrep = 100) {
+    mat <- ec_as_pa(x)
     rarefaction_core(mat, nrep)
 }

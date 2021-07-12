@@ -8,7 +8,7 @@ res2 <- ec_as_pa(mat, spc_name = "Lynx", sit_name = "GHQ")
 test_that("expected error", {
   expect_equal(res1, res2)
   expect_equal(attributes(res1)$noccur, 3)
-  expect_error(ex_as_pa(matrix(data.frame())))
+  expect_error(ec_as_pa(matrix(data.frame())))
 })
 
 

@@ -13,7 +13,7 @@ ec_overlap(x)
 \item{x}{a \code{pa} object or an R object to a coerced to one (see \code{\link[=ec_as_pa]{ec_as_pa()}}).}
 
 \item{test}{test to be performed. Currently \code{bi} and \code{hy}
-are available (see details). Default is set to \code{NULL}, meaning
+are available (see details). Default is set to \code{NULL}, meaning that
 no test is performed.}
 }
 \description{
