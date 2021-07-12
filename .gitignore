@@ -4,6 +4,7 @@ src/*.so
 .DS_Store
 Makefile
 inst/tmp
+ms
 
 # History files
 .Rhistory

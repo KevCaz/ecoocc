@@ -4,7 +4,7 @@
 \alias{ec_generate}
 \title{Generate random presence/absence matrix}
 \usage{
-ec_generate(nst, nsp, probs)
+ec_generate(nst, nsp, probs, ...)
 }
 \arguments{
 \item{nst}{site number (determine the number of rows).}
@@ -12,7 +12,12 @@ ec_generate(nst, nsp, probs)
 \item{nsp}{number of species (determine the number of columns).}
 
 \item{probs}{numeric vector of probabilities presence of species. If there are less elements than species, then the vector is recycled and if there are more, the vector is truncated (see \code{\link[=rep_len]{rep_len()}})}
+
+\item{...}{further arguments passed on to \code{\link[=ec_pa]{ec_pa()}}.}
 }
 \description{
 Generate random presence/absence matrix
+}
+\examples{
+ec_generate(20, 10, .1)
 }
