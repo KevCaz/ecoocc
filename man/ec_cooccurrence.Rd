@@ -47,8 +47,10 @@ plot(out$zs_bi*sqrt(1/0.2), out$zs_hy)
 abline(0,1)
 }
 \references{
-Veech, J. A.. A Probabilistic Model for Analysing Species Co-Occurrence:
+\itemize{
+\item Veech, J. A.. A Probabilistic Model for Analysing Species Co-Occurrence:
 Probabilistic Model. Global Ecology and Biogeography (2013).
+}
 
 Araujo, M. B., Rozenfeld, A., Rahbek, C., & Marquet, P. A. (2011). Using species co-occurrence networks to assess the impacts of climate change. Ecography, 34(6), 897–908. https://doi.org/10.1111/j.1600-0587.2011.06919.x
 \itemize{

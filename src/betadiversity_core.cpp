@@ -19,7 +19,7 @@ using namespace Rcpp;
 DataFrame betadiversity_core(LogicalMatrix mat_pa) {
 
         int i, j, k, l, sz;
-        sz = .5*mat_pa.nrow()*(mat_pa.nrow()-1);
+        sz = .5*mat_pa.nrow()*(mat_pa.nrow() - 1);
         IntegerVector site1(sz), site2(sz), a(sz), b(sz), c(sz), d(sz);
 
         k = 0;

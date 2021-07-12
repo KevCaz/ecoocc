@@ -4,18 +4,16 @@
 \alias{ec_betadiversity}
 \title{Compute beta diversity}
 \usage{
-ec_betadiversity(mat_pa, methods = "bc", site_names = NULL)
+ec_betadiversity(x, methods = "bc")
 }
 \arguments{
-\item{mat_pa}{presence absence matrix (sites as rows and species as columns).}
+\item{x}{a \code{pa} object or an R object to a coerced to one (see \code{\link[=ec_as_pa]{ec_as_pa()}}).}
 
 \item{methods}{a vector of two-letters strings describing the methods te be used.
 Values should be taken among \code{ra}, \code{bc}, \code{wi} and \code{ja} (see details).}
-
-\item{site_names}{string vector giving the names of the sites. If \code{NULL} a numerical sequence is used.}
 }
 \value{
-A matrix with all the combinaison of site and the associated betadiversity.
+A matrix with all the combinaison of sites and the corresponding betadiversity.
 }
 \description{
 Compute the beta diversity between all pair of sites for a specific

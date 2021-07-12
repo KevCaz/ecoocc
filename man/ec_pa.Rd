@@ -16,13 +16,17 @@ ec_pa(x, threshold = 0, spc_name = NULL, sit_name = NULL)
 
 \item{sit_name}{vector of site names.}
 }
+\value{
+An object of class \code{pa} which basically is a matrix of \code{0} (absence) and \code{1} (presence).
+}
 \description{
 Create a presence/absence object
 Create a presence/absence (\code{pa}) object from a matrix.
 }
 \details{
+The input \code{x} should be a presence absence matrix (sites as rows and species as columns), it could be either a logical one or a numeric one. In the latter case, presence and absence will be determined based on \code{threshold}.
 If there are less names than species (or sites), or no names at all, then names will be automatically added. These names are created using column or row numbers (zero-padded to the number of digits of total the number of column or row), preceded by \code{spc_} for column and \code{sit_} for sites.
 }
 \examples{
-ec_pa(matrix(c(0,0,2,1,1,0), 3, 2), spc_name = "Lynx", sit_name = "GHQ") 
+ec_pa(matrix(c(0,0,2,1,1,0), 3, 2), spc_name = "Lynx", sit_name = "ON_001") 
 }

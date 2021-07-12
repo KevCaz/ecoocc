@@ -20,7 +20,7 @@
 #' give very similar results.
 #'
 #' @references
-#' Veech, J. A.. A Probabilistic Model for Analysing Species Co-Occurrence:
+#' * Veech, J. A.. A Probabilistic Model for Analysing Species Co-Occurrence:
 #' Probabilistic Model. Global Ecology and Biogeography (2013).
 
 #' @examples

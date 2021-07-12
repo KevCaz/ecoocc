@@ -4,10 +4,9 @@
 #' Compute the beta diversity between all pair of sites for a specific
 #' presence-absence matrix.
 #'
-#' @param mat_pa presence absence matrix (sites as rows and species as columns).
+#' @param x a `pa` object or an R object to a coerced to one (see [ec_as_pa()]). 
 #' @param methods a vector of two-letters strings describing the methods te be used.
 #' Values should be taken among `ra`, `bc`, `wi` and `ja` (see details).
-#' @param site_names string vector giving the names of the sites. If `NULL` a numerical sequence is used.
 #'
 #' @details
 #' Currently `ra` stands for raw and returns the number of occurrence.
@@ -17,7 +16,7 @@
 #' - `ja`: Jaccard index.
 #'
 #' @return
-#' A matrix with all the combinaison of site and the associated betadiversity.
+#' A matrix with all the combinaison of sites and the corresponding betadiversity.
 #'
 #' @references
 #' * Legendre, P., and De Caceres M.. Beta Diversity as the Variance of Community
@@ -31,19 +30,16 @@
 #'
 #' @export
 
-ec_betadiversity <- function(mat_pa, methods = "bc", site_names = NULL) {
-    mat <- as.matrix(mat_pa) > 0
-    stopifnot(nrow(mat) > 1)
+ec_betadiversity <- function(x, methods = "bc") {
+  
+    mat <- ec_as_pa(x)
     stopifnot(any(methods %in% c("ra", "bc", "wi", "ja")))
     raw <- betadiversity_core(mat)
     # 
     if ("ra" %in% methods) out <- raw else out <- raw[, 1L:2L]
     # 
-    if (!is.null(site_names)) {
-        stopifnot(length(site_names) == nrow(mat_pa))
-        out[1L] <- site_names[out[, 1L]]
-        out[2L] <- site_names[out[, 2L]]
-    }
+    out[1L] <- rownames(mat)[out[, 1L]]
+    out[2L] <- rownames(mat)[out[, 2L]]
     # 
     tmp <- raw[, 3L:6L]
     tmp_ab <- tmp[, 1L] + tmp[, 2L]

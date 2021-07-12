@@ -8,22 +8,26 @@
 #' @param sit_name vector of site names.
 #' 
 #' @details 
+#' The input `x` should be a presence absence matrix (sites as rows and species as columns), it could be either a logical one or a numeric one. In the latter case, presence and absence will be determined based on `threshold`.
 #' If there are less names than species (or sites), or no names at all, then names will be automatically added. These names are created using column or row numbers (zero-padded to the number of digits of total the number of column or row), preceded by `spc_` for column and `sit_` for sites.
+#'
+#' @return 
+#' An object of class `pa` which basically is a matrix of `0` (absence) and `1` (presence).
 #'
 #' @export
 #' @examples 
-#' ec_pa(matrix(c(0,0,2,1,1,0), 3, 2), spc_name = "Lynx", sit_name = "GHQ") 
+#' ec_pa(matrix(c(0,0,2,1,1,0), 3, 2), spc_name = "Lynx", sit_name = "ON_001") 
 
 ec_pa <- function(x, threshold = 0, spc_name = NULL, sit_name = NULL) {
-  
+    
   pa <- (as.matrix(x) > threshold) * 1 
+  stopifnot(NROW(x) > 0 & NCOL(x) > 0)
+  
   rownames(pa) <- name_it(sit_name, NROW(x), "sit")
   colnames(pa) <- name_it(spc_name, NCOL(x), "spc")
   
   structure(
     pa,
-    nspecies = NCOL(pa),
-    nsite = NROW(pa),
     noccur = sum(pa),
     class = "pa"
   )
