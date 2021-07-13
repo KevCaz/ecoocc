@@ -17,8 +17,8 @@
 #' give very similar results.
 #'
 #' @references
-#' * Veech, J. A.. A Probabilistic Model for Analysing Species Co-Occurrence:
-#' Probabilistic Model. Global Ecology and Biogeography (2013).
+#' * Veech, J. A. (2013). A probabilistic model for analysing species co-occurrence: Probabilistic model. Global Ecology and Biogeography, 22(2), 252–260. 
+#' * Arita, H. T. (2016). Species co-occurrence analysis: Pairwise versus matrix-level approaches: Correspondence. Global Ecology and Biogeography, 25(11), 1397–1400.
 
 #' @examples
 #' mat <- ec_generate_pa(1000, 6, .2)

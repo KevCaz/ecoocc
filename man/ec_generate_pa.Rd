@@ -5,14 +5,14 @@
 \alias{ec_order_pa}
 \title{Generate random presence/absence matrix}
 \usage{
-ec_generate_pa(nst, nsp, probs, ...)
+ec_generate_pa(nsit, nspc, probs, ...)
 
 ec_order_pa(x, by = c("both", "site", "species"), decreasing = TRUE)
 }
 \arguments{
-\item{nst}{site number (determine the number of rows).}
+\item{nsit}{site number (determine the number of rows).}
 
-\item{nsp}{number of species (determine the number of columns).}
+\item{nspc}{number of species (determine the number of columns).}
 
 \item{probs}{numeric vector of probabilities presence of species. If there are less elements than species, then the vector is recycled and if there are more, the vector is truncated (see \code{\link[=rep_len]{rep_len()}})}
 

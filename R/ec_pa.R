@@ -41,7 +41,7 @@ ec_pa <- function(x, threshold = 0, spc_name = NULL, sit_name = NULL) {
   structure(
     pa,
     noccur = sum(pa),
-    class = "pa"
+    class = c("pa", "matrix", "array")
   )
 }
 
@@ -83,3 +83,5 @@ msg_plur <- function(len) {
   tmp <- ifelse(len > 1, "s have", " has")  
   paste0(len, " value", tmp)
 }
+
+
