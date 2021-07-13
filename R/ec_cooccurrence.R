@@ -62,15 +62,15 @@ ec_cooccurrence <- function(x, test = NULL) {
 
 ec_overlap <- function(x) {
   coo <- ec_cooccurrence(x)
-  o12 <- coo[, 5] / coo[,6]
-  o21 <- coo[, 5] / coo[,7]
+  o12 <- coo[, 5] / coo[, 7]
+  o21 <- coo[, 5] / coo[, 8]
   sim <- abs(o12 - o21) / max(o12, o21)
   
   ovl <- cbind(
     coo[, 1:2],
     data.frame(
-      overlap_1_2 = coo[, 5]/coo[,6],
-      overlap_2_1 = coo[, 5]/coo[,7],
+      overlap_1_2 = o12,
+      overlap_2_1 = o21,
       symmetry = sim 
     )
   )
@@ -79,19 +79,8 @@ ec_overlap <- function(x) {
   ctb <- do.call(rbind, lapply(unq, sinsout, coo = coo))
   
   list(
-    overlap = cbind(
-      coo[, 1:2],
-      data.frame(
-        overlap_1_2 = coo[, 5]/coo[,6],
-        overlap_2_1 = coo[, 5]/coo[,7],
-        symmetry = sim 
-      )
-    ),
-    network_contribution = data.frame(
-      species = unq,
-      ctb
-    )
-    
+    overlap = ovl,
+    network_contribution = data.frame(species = unq, ctb)  
   )
 }
 
@@ -103,5 +92,29 @@ sinsout <- function(id, coo) {
   c(
     robustness = sum(tmp1[, 5] / tmp1[, 7]) + sum(tmp2[, 5] / tmp2[, 6]),
     sensitivity = sum(tmp1[, 5] / tmp1[, 6]) + sum(tmp2[, 5] / tmp2[, 7])
+  )
+}
+
+
+
+#' @describeIn ec_cooccurrence Return a list of two elements: 
+#' * `units` which incudes checkerboard units. 
+#' * `c_score` checkerboard scores.
+#'
+#' @references
+#' * Stone, L., & Roberts, A. (1990). The checkerboard score and species distributions. Oecologia, 85(1), 74–79. https://doi.org/10.1007/BF00317345
+#'
+#' @export
+#' @examples
+#' mat <- ec_checkerboard(ec_generate(100, 10, .2))
+
+ec_checkerboard <- function(x) {
+  coo <- ec_cooccurrence(x)
+
+  cun <- (coo[, 7] - coo[, 5]) * (coo[, 8] - coo[, 5])
+  
+  list(
+    units = data.frame(coo[, 1:2], c_units = cun),
+    c_score = sum(cun) / nrow(coo)
   )
 }

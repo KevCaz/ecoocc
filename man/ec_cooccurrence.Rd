@@ -3,11 +3,14 @@
 \name{ec_cooccurrence}
 \alias{ec_cooccurrence}
 \alias{ec_overlap}
+\alias{ec_checkerboard}
 \title{Co-occurrence network}
 \usage{
 ec_cooccurrence(x, test = NULL)
 
 ec_overlap(x)
+
+ec_checkerboard(x)
 }
 \arguments{
 \item{x}{a \code{pa} object or an R object to a coerced to one (see \code{\link[=ec_as_pa]{ec_as_pa()}}).}
@@ -36,6 +39,12 @@ give very similar results.
 \item \code{overlap} which incudes overlaps for all pairs of species and the degree of symmetry (as described in Araujo 2011)
 \item \code{network_contribution} that includes the species contributions to network robustness, \code{robustness}, and the species sensitivity to the loss of links in the network, \code{sensitivity} (see Araujo 2011).
 }
+
+\item \code{ec_checkerboard}: Return a list of two elements:
+\itemize{
+\item \code{units} which incudes checkerboard units.
+\item \code{c_score} checkerboard scores.
+}
 }}
 
 \examples{
@@ -44,6 +53,7 @@ out <- ec_cooccurrence(mat, test = c('bi', 'hy'))
 plot(out$zs_bi*sqrt(1/0.2), out$zs_hy)
 abline(0,1)
 mat <- ec_overlap(ec_generate(100, 10, .2))
+mat <- ec_checkerboard(ec_generate(100, 10, .2))
 }
 \references{
 \itemize{
@@ -54,5 +64,9 @@ Probabilistic Model. Global Ecology and Biogeography (2013).
 \itemize{
 \item Araujo, M. B., Rozenfeld, A., Rahbek, C., & Marquet, P. A. (2011). Using species co-occurrence networks to assess the impacts of climate change. Ecography, 34(6), 897–908. https://doi.org/10.1111/j.1600-0587.2011.06919.x
 \item Griffith, G. P., Strutton, P. G., & Semmens, J. M. (2018). Climate change alters stability and species potential interactions in a large marine ecosystem. Global Change Biology, 24(1), e90–e100. https://doi.org/10.1111/gcb.13891
+}
+
+\itemize{
+\item Stone, L., & Roberts, A. (1990). The checkerboard score and species distributions. Oecologia, 85(1), 74–79. https://doi.org/10.1007/BF00317345
 }
 }

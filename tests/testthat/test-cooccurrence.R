@@ -25,3 +25,17 @@ test_that("expected values", {
 test_that("asymptotic behavior", {
   expect_true(stats::cor(res2$zs_hy, res2$zs_bi) > .9999)
 })
+
+
+
+
+context("Checkerboard score")
+# example in Stone & Roberts 
+
+mat0 <- matrix(0, 10, 10)
+mat1 <- matrix(1, 10, 10)
+matU <- rbind(cbind(mat1, mat0), cbind(mat0, mat1))
+
+test_that("expected values", {
+  expect_equal(round(ec_checkerboard(matU)$c_score, 1), 52.6) 
+})

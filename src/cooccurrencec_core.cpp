@@ -20,6 +20,7 @@ using namespace Rcpp;
 DataFrame cooccurrence_core(LogicalMatrix mat_pa) {
 
         int i, j, k, l, sz;
+        // number of unique pairs
         sz = .5*mat_pa.ncol()*(mat_pa.ncol()-1);
         IntegerVector species1(sz), species2(sz), a(sz), b(sz), c(sz), d(sz);
 
@@ -79,7 +80,6 @@ NumericVector test_cooc_binomial_core(IntegerVector ab, IntegerVector ac,
 
         return(zscore);
 }
-
 
 
 // [[Rcpp::export]]
