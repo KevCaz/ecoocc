@@ -9,14 +9,14 @@
 #' Values should be taken among `ra`, `bc`, `wi` and `ja` (see details).
 #'
 #' @details
-#' Currently `ra` stands for raw and returns the number of occurrence.
+#' Currently `ra` stands for raw and returns the number of occurrence. 
 #' Additional values are
 #' - `bc`: Bray-Curtis index,
 #' - `wi`: Wishart index,
 #' - `ja`: Jaccard index.
 #'
 #' @return
-#' A matrix with all the combinaison of sites and the corresponding betadiversity.
+#' A matrix with all the combinaisons of sites and the corresponding betadiversity.
 #'
 #' @references
 #' * Legendre, P., and De Caceres M.. Beta Diversity as the Variance of Community

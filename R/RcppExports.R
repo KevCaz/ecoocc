@@ -25,11 +25,10 @@ betadiversity_core <- function(mat_pa) {
 #' @description
 #' Compute the co-occurrence of all pairs of species.
 #'
-#'
 #' @param mat_pa presence absence matrix (sites as rows and species as columns).
 #'
 #' @return
-#' A dataframe with all the combinaisons of sites and the counts associated.
+#' A dataframe with all the combinaisons of species and the counts associated.
 #'
 cooccurrence_core <- function(mat_pa) {
     .Call('_ecoocc_cooccurrence_core', PACKAGE = 'ecoocc', mat_pa)
@@ -41,6 +40,17 @@ test_cooc_binomial_core <- function(ab, ac, a, nsite) {
 
 test_cooc_hypergeom_core <- function(ab, ac, a, nsite) {
     .Call('_ecoocc_test_cooc_hypergeom_core', PACKAGE = 'ecoocc', ab, ac, a, nsite)
+}
+
+#' @name cooccurrence_core
+#'
+#' @title Co-occurrence analysis for triplets. 
+#' 
+#' @return
+#' A dataframe with all triplets of species and the counts associated.
+#'
+cooccurrence_triplet_core <- function(mat_pa) {
+    .Call('_ecoocc_cooccurrence_triplet_core', PACKAGE = 'ecoocc', mat_pa)
 }
 
 #' @name rarefaction_core

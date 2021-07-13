@@ -6,7 +6,7 @@ test_that("expected generate", {
 })
 
 
-context("Order")
+context("Order pa object")
 
 mat1 <- matrix(c(0, 1, 1, 1), 2)
 

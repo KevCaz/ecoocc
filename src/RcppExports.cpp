@@ -60,6 +60,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// cooccurrence_triplet_core
+DataFrame cooccurrence_triplet_core(LogicalMatrix mat_pa);
+RcppExport SEXP _ecoocc_cooccurrence_triplet_core(SEXP mat_paSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< LogicalMatrix >::type mat_pa(mat_paSEXP);
+    rcpp_result_gen = Rcpp::wrap(cooccurrence_triplet_core(mat_pa));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rarefaction_core
 IntegerMatrix rarefaction_core(LogicalMatrix mat_pa, int nrep);
 RcppExport SEXP _ecoocc_rarefaction_core(SEXP mat_paSEXP, SEXP nrepSEXP) {
@@ -90,6 +101,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_ecoocc_cooccurrence_core", (DL_FUNC) &_ecoocc_cooccurrence_core, 1},
     {"_ecoocc_test_cooc_binomial_core", (DL_FUNC) &_ecoocc_test_cooc_binomial_core, 4},
     {"_ecoocc_test_cooc_hypergeom_core", (DL_FUNC) &_ecoocc_test_cooc_hypergeom_core, 4},
+    {"_ecoocc_cooccurrence_triplet_core", (DL_FUNC) &_ecoocc_cooccurrence_triplet_core, 1},
     {"_ecoocc_rarefaction_core", (DL_FUNC) &_ecoocc_rarefaction_core, 2},
     {"_ecoocc_temporal_beta_core", (DL_FUNC) &_ecoocc_temporal_beta_core, 2},
     {NULL, NULL, 0}

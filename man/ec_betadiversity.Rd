@@ -13,7 +13,7 @@ ec_betadiversity(x, methods = "bc")
 Values should be taken among \code{ra}, \code{bc}, \code{wi} and \code{ja} (see details).}
 }
 \value{
-A matrix with all the combinaison of sites and the corresponding betadiversity.
+A matrix with all the combinaisons of sites and the corresponding betadiversity.
 }
 \description{
 Compute the beta diversity between all pairs of sites for a specific

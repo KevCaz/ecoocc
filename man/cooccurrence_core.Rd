@@ -2,15 +2,20 @@
 % Please edit documentation in R/RcppExports.R
 \name{cooccurrence_core}
 \alias{cooccurrence_core}
+\alias{cooccurrence_triplet_core}
 \title{Co-occurrence analysis.}
 \usage{
 cooccurrence_core(mat_pa)
+
+cooccurrence_triplet_core(mat_pa)
 }
 \arguments{
 \item{mat_pa}{presence absence matrix (sites as rows and species as columns).}
 }
 \value{
-A dataframe with all the combinaisons of sites and the counts associated.
+A dataframe with all the combinaisons of species and the counts associated.
+
+A dataframe with all triplets of species and the counts associated.
 }
 \description{
 Compute the co-occurrence of all pairs of species.

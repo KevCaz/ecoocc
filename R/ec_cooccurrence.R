@@ -32,19 +32,26 @@
 ec_cooccurrence <- function(x, test = NULL) {
   
     mat <- ec_as_pa(x)
-    out <- cooccurrence_core(mat)
+    out <- cooccurrence_core(x)
     # 
     if ("bi" %in% test) 
-        out$zs_bi <- test_cooc_binomial_core(out$case_sp1, out$case_sp2, out$case_11, 
-            nrow(mat))
+        out$zs_bi <- test_cooc_binomial_core(out$case_spc1, 
+          out$case_spc2, out$case_11, nrow(mat))
     if ("hy" %in% test) 
-        out$zs_hy <- test_cooc_hypergeom_core(out$case_sp1, out$case_sp2, out$case_11, 
-            nrow(mat))
+        out$zs_hy <- test_cooc_hypergeom_core(out$case_spc1, out$case_spc2, out$case_11, nrow(mat))
     # 
     out[1L] <- colnames(mat)[out[, 1L]]
     out[2L] <- colnames(mat)[out[, 2L]]
     # 
     out
+}
+
+
+ec_cooccurrence_triplet <- function(x, test = NULL) {
+  
+    mat <- ec_as_pa(x)
+    stopifnot(ncol(mat) > 2)
+    cooccurrence_triplet_core(mat)
 }
 
 
