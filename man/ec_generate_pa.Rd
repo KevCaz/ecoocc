@@ -2,9 +2,12 @@
 % Please edit documentation in R/ec_generate.R
 \name{ec_generate_pa}
 \alias{ec_generate_pa}
+\alias{ec_order_pa}
 \title{Generate random presence/absence matrix}
 \usage{
 ec_generate_pa(nst, nsp, probs, ...)
+
+ec_order_pa(x, by = c("both", "site", "species"), decreasing = TRUE)
 }
 \arguments{
 \item{nst}{site number (determine the number of rows).}
@@ -14,10 +17,22 @@ ec_generate_pa(nst, nsp, probs, ...)
 \item{probs}{numeric vector of probabilities presence of species. If there are less elements than species, then the vector is recycled and if there are more, the vector is truncated (see \code{\link[=rep_len]{rep_len()}})}
 
 \item{...}{further arguments passed on to \code{\link[=ec_pa]{ec_pa()}}.}
+
+\item{x}{a \code{pa} object or an R object to a coerced to one (see \code{\link[=ec_as_pa]{ec_as_pa()}}).}
+
+\item{by}{dimension along which the \code{pa} object should be orderd, default is set to "both".}
+
+\item{decreasing}{Should the sort order be increasing or decreasing? see \code{\link[=order]{order()}}.}
 }
 \description{
 Generate random presence/absence matrix
 }
+\section{Functions}{
+\itemize{
+\item \code{ec_order_pa}: Returns
+}}
+
 \examples{
 ec_generate_pa(20, 10, .1)
+ec_order_pa(ec_generate_pa(20, 10, .1))
 }
