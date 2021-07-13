@@ -30,42 +30,42 @@ What is implemented so far?
      ec_betadiversity(mat)
 
     ##       [,1]  [,2]  [,3]
-    ## [1,] FALSE FALSE FALSE
-    ## [2,]  TRUE FALSE  TRUE
-    ## [3,]  TRUE FALSE FALSE
-    ## [4,]  TRUE  TRUE  TRUE
-    ## [5,] FALSE FALSE  TRUE
+    ## [1,] FALSE  TRUE FALSE
+    ## [2,]  TRUE  TRUE FALSE
+    ## [3,]  TRUE  TRUE FALSE
+    ## [4,]  TRUE  TRUE FALSE
+    ## [5,]  TRUE FALSE FALSE
     ##    site1 site2        bc
-    ## 1      1     2 1.0000000
-    ## 2      1     3 1.0000000
-    ## 3      1     4 1.0000000
+    ## 1      1     2 0.3333333
+    ## 2      1     3 0.3333333
+    ## 3      1     4 0.3333333
     ## 4      1     5 1.0000000
-    ## 5      2     3 0.3333333
-    ## 6      2     4 0.2000000
+    ## 5      2     3 0.0000000
+    ## 6      2     4 0.0000000
     ## 7      2     5 0.3333333
-    ## 8      3     4 0.5000000
-    ## 9      3     5 1.0000000
-    ## 10     4     5 0.5000000
+    ## 8      3     4 0.0000000
+    ## 9      3     5 0.3333333
+    ## 10     4     5 0.3333333
 
 ### Rarefaction
 
     (mat <- matrix(stats::runif(40)>.2, 10))
     ec_rarefaction(mat, 6)
 
-    ##        [,1]  [,2]  [,3] [,4]
-    ##  [1,]  TRUE  TRUE  TRUE TRUE
-    ##  [2,] FALSE  TRUE  TRUE TRUE
-    ##  [3,] FALSE FALSE FALSE TRUE
-    ##  [4,]  TRUE  TRUE  TRUE TRUE
-    ##  [5,]  TRUE  TRUE  TRUE TRUE
-    ##  [6,]  TRUE  TRUE FALSE TRUE
-    ##  [7,]  TRUE  TRUE  TRUE TRUE
-    ##  [8,]  TRUE FALSE  TRUE TRUE
-    ##  [9,] FALSE  TRUE  TRUE TRUE
-    ## [10,] FALSE  TRUE FALSE TRUE
+    ##        [,1]  [,2]  [,3]  [,4]
+    ##  [1,]  TRUE  TRUE  TRUE FALSE
+    ##  [2,]  TRUE  TRUE  TRUE  TRUE
+    ##  [3,]  TRUE  TRUE FALSE FALSE
+    ##  [4,] FALSE  TRUE  TRUE  TRUE
+    ##  [5,]  TRUE  TRUE FALSE  TRUE
+    ##  [6,] FALSE  TRUE  TRUE FALSE
+    ##  [7,]  TRUE  TRUE  TRUE  TRUE
+    ##  [8,]  TRUE FALSE  TRUE  TRUE
+    ##  [9,] FALSE FALSE  TRUE  TRUE
+    ## [10,]  TRUE  TRUE  TRUE  TRUE
     ##       [,1] [,2] [,3] [,4] [,5] [,6]
-    ##  [1,]    4    4    3    4    3    3
-    ##  [2,]    4    4    4    4    3    4
+    ##  [1,]    2    2    2    4    2    2
+    ##  [2,]    3    4    4    4    4    4
     ##  [3,]    4    4    4    4    4    4
     ##  [4,]    4    4    4    4    4    4
     ##  [5,]    4    4    4    4    4    4

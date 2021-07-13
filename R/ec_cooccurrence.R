@@ -97,16 +97,22 @@ sinsout <- function(id, coo) {
 
 
 
-#' @describeIn ec_cooccurrence Return a list of two elements: 
+#' @describeIn ec_cooccurrence Compute the checkerboard score and return a list of three elements: 
 #' * `units` which incudes checkerboard units. 
 #' * `c_score` checkerboard scores.
+#' * `c_score_s2` the S2 statistics in Roberts & Stone (1990).
 #'
 #' @references
 #' * Stone, L., & Roberts, A. (1990). The checkerboard score and species distributions. Oecologia, 85(1), 74–79. https://doi.org/10.1007/BF00317345
+#' * Roberts, A., & Stone, L. (1990). Island-sharing by archipelago species. Oecologia, 83(4), 560–567. https://doi.org/10.1007/BF00317210
 #'
 #' @export
 #' @examples
-#' mat <- ec_checkerboard(ec_generate(100, 10, .2))
+#' # Classical example, in Stone & Roberts 1990
+#' mat0 <- matrix(0, 10, 10)
+#' mat1 <- matrix(1, 10, 10)
+#' matU <- rbind(cbind(mat1, mat0), cbind(mat0, mat1))
+#' ec_checkerboard(matU)
 
 ec_checkerboard <- function(x) {
   coo <- ec_cooccurrence(x)
@@ -114,7 +120,8 @@ ec_checkerboard <- function(x) {
   cun <- (coo[, 7] - coo[, 5]) * (coo[, 8] - coo[, 5])
   
   list(
-    units = data.frame(coo[, 1:2], c_units = cun),
-    c_score = sum(cun) / nrow(coo)
+    c_units = data.frame(coo[, 1:2], c_units = cun),
+    c_score = sum(cun) / nrow(coo),
+    c_score_s2 = sum(cun * cun) / nrow(coo)
   )
 }

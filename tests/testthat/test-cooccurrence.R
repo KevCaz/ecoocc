@@ -35,7 +35,12 @@ context("Checkerboard score")
 mat0 <- matrix(0, 10, 10)
 mat1 <- matrix(1, 10, 10)
 matU <- rbind(cbind(mat1, mat0), cbind(mat0, mat1))
+resU <- ec_checkerboard(matU)
 
 test_that("expected values", {
-  expect_equal(round(ec_checkerboard(matU)$c_score, 1), 52.6) 
+  expect_equal(unique(resU$c_units$c_units), c(0, 100))
+  expect_equal(round(resU$c_score, 1), 52.6)
+  expect_equal(ec_checkerboard(matrix(c(1, 1, 1, 0), 2))$c_score, 0)
+  expect_equal(ec_checkerboard(matrix(c(1, 1, 1, 0), 2))$c_score_s2, 0)
+  expect_equal(ec_checkerboard(matrix(c(0, 1, 1, 0), 2))$c_score, 1)
 })

@@ -40,10 +40,11 @@ give very similar results.
 \item \code{network_contribution} that includes the species contributions to network robustness, \code{robustness}, and the species sensitivity to the loss of links in the network, \code{sensitivity} (see Araujo 2011).
 }
 
-\item \code{ec_checkerboard}: Return a list of two elements:
+\item \code{ec_checkerboard}: Compute the checkerboard score and return a list of three elements:
 \itemize{
 \item \code{units} which incudes checkerboard units.
 \item \code{c_score} checkerboard scores.
+\item \code{c_score_s2} the S2 statistics in Roberts & Stone (1990).
 }
 }}
 
@@ -53,7 +54,11 @@ out <- ec_cooccurrence(mat, test = c('bi', 'hy'))
 plot(out$zs_bi*sqrt(1/0.2), out$zs_hy)
 abline(0,1)
 mat <- ec_overlap(ec_generate(100, 10, .2))
-mat <- ec_checkerboard(ec_generate(100, 10, .2))
+# Classical example, in Stone & Roberts 1990
+mat0 <- matrix(0, 10, 10)
+mat1 <- matrix(1, 10, 10)
+matU <- rbind(cbind(mat1, mat0), cbind(mat0, mat1))
+ec_checkerboard(matU)
 }
 \references{
 \itemize{
@@ -68,5 +73,6 @@ Probabilistic Model. Global Ecology and Biogeography (2013).
 
 \itemize{
 \item Stone, L., & Roberts, A. (1990). The checkerboard score and species distributions. Oecologia, 85(1), 74–79. https://doi.org/10.1007/BF00317345
+\item Roberts, A., & Stone, L. (1990). Island-sharing by archipelago species. Oecologia, 83(4), 560–567. https://doi.org/10.1007/BF00317210
 }
 }

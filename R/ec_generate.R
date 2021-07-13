@@ -21,3 +21,6 @@ ec_generate <- function(nst, nsp, probs, ...) {
   )
   
 } 
+
+
+# ec_shuffle <- function(nrep)
