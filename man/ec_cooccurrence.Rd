@@ -49,11 +49,11 @@ give very similar results.
 }}
 
 \examples{
-mat <- ec_generate(1000, 6, .2)
+mat <- ec_generate_pa(1000, 6, .2)
 out <- ec_cooccurrence(mat, test = c('bi', 'hy'))
 plot(out$zs_bi*sqrt(1/0.2), out$zs_hy)
 abline(0,1)
-mat <- ec_overlap(ec_generate(100, 10, .2))
+mat <- ec_overlap(ec_generate_pa(100, 10, .2))
 # Classical example, in Stone & Roberts 1990
 mat0 <- matrix(0, 10, 10)
 mat1 <- matrix(1, 10, 10)

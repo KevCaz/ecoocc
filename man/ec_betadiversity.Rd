@@ -29,7 +29,7 @@ Additional values are
 }
 }
 \examples{
-mat <- ec_generate(20, 10, .4)
+mat <- ec_generate_pa(20, 10, .4)
 ec_betadiversity(mat)
 
 }

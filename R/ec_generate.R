@@ -8,9 +8,9 @@
 #' @export
 #'
 #' @examples
-#' ec_generate(20, 10, .1)
+#' ec_generate_pa(20, 10, .1)
 
-ec_generate <- function(nst, nsp, probs, ...) {
+ec_generate_pa <- function(nst, nsp, probs, ...) {
   
   # quicker than a for loop 
   ec_as_pa(

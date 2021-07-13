@@ -15,7 +15,7 @@
 #' @export
 #'
 #' @examples
-#' mat <- ec_generate(20, 10, .4)
+#' mat <- ec_generate_pa(20, 10, .4)
 #' res <- ec_rarefaction(mat, 1000)
 #' plot(apply(res, 1, mean))
 

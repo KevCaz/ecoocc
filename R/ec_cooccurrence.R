@@ -21,7 +21,7 @@
 #' Probabilistic Model. Global Ecology and Biogeography (2013).
 
 #' @examples
-#' mat <- ec_generate(1000, 6, .2)
+#' mat <- ec_generate_pa(1000, 6, .2)
 #' out <- ec_cooccurrence(mat, test = c('bi', 'hy'))
 #' plot(out$zs_bi*sqrt(1/0.2), out$zs_hy)
 #' abline(0,1)
@@ -58,7 +58,7 @@ ec_cooccurrence <- function(x, test = NULL) {
 #'
 #' @export
 #' @examples
-#' mat <- ec_overlap(ec_generate(100, 10, .2))
+#' mat <- ec_overlap(ec_generate_pa(100, 10, .2))
 
 ec_overlap <- function(x) {
   coo <- ec_cooccurrence(x)
