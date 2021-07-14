@@ -63,7 +63,7 @@ DataFrame cooccurrence_core(LogicalMatrix mat_pa) {
 
 // [[Rcpp::export]]
 
-NumericVector test_cooc_binomial_core(IntegerVector ab, IntegerVector ac,
+NumericVector cooc_zscore_binomial_core(IntegerVector ab, IntegerVector ac,
                                               IntegerVector a, int nsite) {
 
         int k, sz;
@@ -83,7 +83,7 @@ NumericVector test_cooc_binomial_core(IntegerVector ab, IntegerVector ac,
 
 // [[Rcpp::export]]
 
-NumericVector test_cooc_hypergeom_core(IntegerVector ab, IntegerVector ac,
+NumericVector cooc_zscore_hypergeom_core(IntegerVector ab, IntegerVector ac,
                                                     IntegerVector a, int nsite) {
 
         int k, sz, mn, mx;

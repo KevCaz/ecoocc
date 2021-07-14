@@ -22,7 +22,7 @@
 
 #' @examples
 #' mat <- ec_generate_pa(1000, 6, .2)
-#' out <- ec_cooccurrence(mat, test = c('bi', 'hy'))
+#' out <- ec_cooccurrence(mat, test = c('bi', 'hy'))$counts
 #' plot(out$zs_bi*sqrt(1/0.2), out$zs_hy)
 #' abline(0,1)
 
@@ -35,15 +35,20 @@ ec_cooccurrence <- function(x, test = NULL) {
     out <- cooccurrence_core(x)
     # 
     if ("bi" %in% test) 
-        out$zs_bi <- test_cooc_binomial_core(out$case_spc1, 
+        out$zs_bi <- cooc_zscore_binomial_core(out$case_spc1, 
           out$case_spc2, out$case_11, nrow(mat))
     if ("hy" %in% test) 
-        out$zs_hy <- test_cooc_hypergeom_core(out$case_spc1, out$case_spc2, out$case_11, nrow(mat))
+        out$zs_hy <- cooc_zscore_hypergeom_core(out$case_spc1, out$case_spc2, out$case_11, nrow(mat))
     # 
     out[1L] <- colnames(mat)[out[, 1L]]
     out[2L] <- colnames(mat)[out[, 2L]]
-    # 
-    out
+    #
+     
+    #
+    list(
+      counts = out,
+      pairwise_metrics = NULL
+    )
 }
 
 
@@ -68,7 +73,7 @@ ec_cooccurrence_triplet <- function(x, test = NULL) {
 #' mat <- ec_overlap(ec_generate_pa(100, 10, .2))
 
 ec_overlap <- function(x) {
-  coo <- ec_cooccurrence(x)
+  coo <- ec_cooccurrence(x)$counts
   o12 <- coo[, 5] / coo[, 7]
   o21 <- coo[, 5] / coo[, 8]
   sim <- abs(o12 - o21) / max(o12, o21)
@@ -105,7 +110,7 @@ sinsout <- function(id, coo) {
 
 
 #' @describeIn ec_cooccurrence Compute the checkerboard score and return a list of three elements: 
-#' * `units` which incudes checkerboard units. 
+#' * `units` which incudes checkerboard units and t
 #' * `c_score` checkerboard scores.
 #' * `c_score_s2` the S2 statistics in Roberts & Stone (1990).
 #'
@@ -122,7 +127,8 @@ sinsout <- function(id, coo) {
 #' ec_checkerboard(matU)
 
 ec_checkerboard <- function(x) {
-  coo <- ec_cooccurrence(x)
+  mat <- ec_as_pa(x)
+  coo <- cooccurrence_core(x)
 
   cun <- (coo[, 7] - coo[, 5]) * (coo[, 8] - coo[, 5])
   

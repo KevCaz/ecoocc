@@ -1,11 +1,11 @@
 context("Pairwise cooccurrence")
 
 mat1 <- rbind(c(0,0,1), c(0,1,0))
-res1 <- ec_cooccurrence(mat1)
+res1 <- ec_cooccurrence(mat1)$counts
 #
 set.seed(2391)
 mat2 <- matrix(stats::runif(1000000) > .1,  ncol = 10)
-res2 <- ec_cooccurrence(mat2, test = c('bi', 'hy'))
+res2 <- ec_cooccurrence(mat2, test = c('bi', 'hy'))$counts
 
 
 test_that("expected names", {

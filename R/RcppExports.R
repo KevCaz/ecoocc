@@ -34,12 +34,12 @@ cooccurrence_core <- function(mat_pa) {
     .Call('_ecoocc_cooccurrence_core', PACKAGE = 'ecoocc', mat_pa)
 }
 
-test_cooc_binomial_core <- function(ab, ac, a, nsite) {
-    .Call('_ecoocc_test_cooc_binomial_core', PACKAGE = 'ecoocc', ab, ac, a, nsite)
+cooc_zscore_binomial_core <- function(ab, ac, a, nsite) {
+    .Call('_ecoocc_cooc_zscore_binomial_core', PACKAGE = 'ecoocc', ab, ac, a, nsite)
 }
 
-test_cooc_hypergeom_core <- function(ab, ac, a, nsite) {
-    .Call('_ecoocc_test_cooc_hypergeom_core', PACKAGE = 'ecoocc', ab, ac, a, nsite)
+cooc_zscore_hypergeom_core <- function(ab, ac, a, nsite) {
+    .Call('_ecoocc_cooc_zscore_hypergeom_core', PACKAGE = 'ecoocc', ab, ac, a, nsite)
 }
 
 #' @name cooccurrence_core

@@ -42,7 +42,7 @@ give very similar results.
 
 \item \code{ec_checkerboard}: Compute the checkerboard score and return a list of three elements:
 \itemize{
-\item \code{units} which incudes checkerboard units.
+\item \code{units} which incudes checkerboard units and t
 \item \code{c_score} checkerboard scores.
 \item \code{c_score_s2} the S2 statistics in Roberts & Stone (1990).
 }
@@ -50,7 +50,7 @@ give very similar results.
 
 \examples{
 mat <- ec_generate_pa(1000, 6, .2)
-out <- ec_cooccurrence(mat, test = c('bi', 'hy'))
+out <- ec_cooccurrence(mat, test = c('bi', 'hy'))$counts
 plot(out$zs_bi*sqrt(1/0.2), out$zs_hy)
 abline(0,1)
 mat <- ec_overlap(ec_generate_pa(100, 10, .2))
