@@ -108,7 +108,7 @@ randomly generate object of class `pa` quickly, `ec_generate_pa()`.
 ### Temporal beta diversity
 
     (mat <- rbind(c(0,0,1), c(0,1,0)))
-    ec_cooccurrence(mat)
+    ec_cooc_count_pair(mat)
 
     ## ⚠ No presence data for the following species: 1
 
@@ -123,7 +123,7 @@ randomly generate object of class `pa` quickly, `ec_generate_pa()`.
 ### Occurrence
 
     mat <- rbind(c(0,0,1), c(0,1,0))
-    ec_cooccurrence(mat)
+    ec_cooc_count_pair(mat)
 
     ## ⚠ No presence data for the following species: 1
 

@@ -41,6 +41,7 @@ ec_pa <- function(x, threshold = 0, spc_name = NULL, sit_name = NULL) {
   structure(
     pa,
     noccur = sum(pa),
+    type = "logical",
     class = c("pa", "matrix", "array")
   )
 }

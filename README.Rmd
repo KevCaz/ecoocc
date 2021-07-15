@@ -65,7 +65,7 @@ ec_rarefaction(mat, 6)
 
 ```{r, results = "hold"}
 (mat <- rbind(c(0,0,1), c(0,1,0)))
-ec_cooccurrence(mat)
+ec_cooc_count_pair(mat)
  ```
 
 
@@ -73,5 +73,5 @@ ec_cooccurrence(mat)
 
 ```{r, results = "hold"}
 mat <- rbind(c(0,0,1), c(0,1,0))
-ec_cooccurrence(mat)
+ec_cooc_count_pair(mat)
  ```
