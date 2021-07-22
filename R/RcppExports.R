@@ -42,10 +42,18 @@ cooc_zscore_hypergeom_core <- function(ab, ac, a, nsite) {
     .Call('_ecoocc_cooc_zscore_hypergeom_core', PACKAGE = 'ecoocc', ab, ac, a, nsite)
 }
 
+cooc_mututal_information_core <- function(n1, n2, n11, n10, n01, n00, nsite) {
+    .Call('_ecoocc_cooc_mututal_information_core', PACKAGE = 'ecoocc', n1, n2, n11, n10, n01, n00, nsite)
+}
+
+cooc_overlap_core <- function(n1, n2, n11) {
+    .Call('_ecoocc_cooc_overlap_core', PACKAGE = 'ecoocc', n1, n2, n11)
+}
+
 #' @name cooccurrence_core
 #'
-#' @title Co-occurrence analysis for triplets. 
-#' 
+#' @title Co-occurrence analysis for triplets.
+#'
 #' @return
 #' A dataframe with all triplets of species and the counts associated.
 #'

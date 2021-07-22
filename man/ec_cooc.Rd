@@ -13,7 +13,7 @@
 \alias{ec_cooc_global}
 \alias{ec_cooc_global.pa}
 \alias{ec_cooc_global.cooc_count}
-\title{Co_cccurence analysis}
+\title{Cooccurrence analysis}
 \usage{
 ec_cooc(x, ...)
 
@@ -47,7 +47,7 @@ ec_cooc_global(x, ...)
 \item{nsit}{number of sites.}
 }
 \description{
-Co_cccurence analysis
+Cooccurrence analysis.
 }
 \section{Functions}{
 \itemize{

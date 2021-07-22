@@ -5,6 +5,7 @@ src/*.so
 Makefile
 inst/tmp
 ms
+.vscode/
 
 # History files
 .Rhistory

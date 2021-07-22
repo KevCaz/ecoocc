@@ -30,6 +30,7 @@ ec_cooc_count_pair <- function(x) {
   
     mat <- ec_as_pa(x)
     out <- cooccurrence_core(x)
+    stopifnot(all(out$case_spc1 >= out$case_11 & out$case_spc2 >= out$case_11))
     # 
     out[1L] <- colnames(mat)[out[, 1L]]
     out[2L] <- colnames(mat)[out[, 2L]]
@@ -88,16 +89,13 @@ ec_checkerboard <- function(x) {
   )
 }
 
-
-
-
-#' Co_cccurence analysis 
+#' Cooccurrence analysis 
 #'
-#' Co_cccurence analysis 
-#' 
+#' Cooccurrence analysis.
+#'
 #' @param x object to be converted into an object class `pa`.
 #' @param ... ignored.
-#' 
+#'
 #' @export
 
 ec_cooc <- function(x, ...) UseMethod("ec_cooc")
@@ -148,22 +146,16 @@ ec_cooc_pairwise.pa <- function(x, ...) {
 #' @export
 
 ec_cooc_pairwise.cooc_count <- function(x, nsit, ...) {
-  o12 <- x$case_11 / x$case_spc1
-  o21 <- x$case_11 / x$case_spc2
-  sim <- abs(o12 - o21) / max(o12, o21)
   
   ovl <- cbind(
     x[, 1:2],
     data.frame(
       zs_bi = cooc_zscore_binomial_core(x$case_spc1, x$case_spc2, x$case_11, nsit),
-      zs_hy = cooc_zscore_hypergeom_core(x$case_spc1, x$case_spc2, x$case_11, nsit),
-      c_score_unit = (x$case_spc1 - x$case_11) * (x$case_spc2 - x$case_11),
-      bc = (x$case_11*x$case_00 - x$case_10*x$case_01) / (nsit*(nsit-1)),
-      mpi = x$case_11/min(x$case_01, x$case_10),
-      overlap_1_2 = o12,
-      overlap_2_1 = o21,
-      symmetry = sim
-    )
+      zs_hy = cooc_zscore_hypergeom_core(x$case_spc1, x$case_spc2, x$case_11, nsit)
+    ),
+    cooc_mututal_information_core(x$case_spc1, x$case_spc2, 
+        x$case_11, x$case_10, x$case_01, x$case_00, nsit), 
+    cooc_overlap_core(x$case_spc1, x$case_spc2, x$case_11)
   )
 }
 
@@ -181,7 +173,7 @@ ec_cooc_species <- function(x, ...) UseMethod("ec_cooc_species")
 
 ec_cooc_species.pa <- function(x, ...) {
   ec_cooc_species(ec_cooc_count_pair(x), nsit = nrow(x), ...)
-}
+} 
 
 
 #' @name ec_cooc
@@ -191,8 +183,16 @@ ec_cooc_species.cooc_count <- function(x, nsit, ...) {
   # pw <- ec_cooc_pairwise(x, nsit = nsit, ...)
   unq <- unique(unlist(x[, 1:2]))
   ctb <- do.call(rbind, lapply(unq, sinsout, coo = x))
+
+  nspc <- nspc_from_nrow_cooc(nrow(x))
+  # get presence from cooc_count
+  pr <- c(x[1, 7], x[seq(2, nspc), 8]) / nsit
   
-  data.frame(species = unq, ctb)
+  data.frame(
+    species = unq, 
+    presence = pr,
+    entropy = -pr * log2(pr) - (1 - pr) * log2(1 - pr),
+    ctb)
 }
 
 
@@ -201,8 +201,8 @@ sinsout <- function(id, coo) {
   tmp1 <- coo[coo[1] == id, ]
   tmp2 <- coo[coo[2] == id, ]
   c(
-    robustness = sum(tmp1[, 5] / tmp1[, 7]) + sum(tmp2[, 5] / tmp2[, 6]),
-    sensitivity = sum(tmp1[, 5] / tmp1[, 6]) + sum(tmp2[, 5] / tmp2[, 7])
+    robustness = sum(tmp1[, 5] / tmp1[, 8]) + sum(tmp2[, 5] / tmp2[, 7]),
+    sensitivity = sum(tmp1[, 5] / tmp1[, 7]) + sum(tmp2[, 5] / tmp2[, 8])
   )
 }
 
@@ -229,7 +229,7 @@ ec_cooc_global.cooc_count <- function(x, nsit, ...) {
   pw <- ec_cooc_pairwise(x, nsit = nsit, ...)
   data.frame(
     c_score = sum(pw$c_score_unit) / nsit,
-    c_score_S2 = sum(pw$c_score_unit*pw$c_score_unit) / nsit 
+    c_score_S2 = sum(as.double(pw$c_score_unit)*as.double(pw$c_score_unit)) / nsit 
   )
 }
 

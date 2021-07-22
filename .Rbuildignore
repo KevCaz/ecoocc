@@ -10,3 +10,4 @@ LICENSE
 ^inst/NEWS.Rd
 ^.github$
 ^ms$
+^.vscode$

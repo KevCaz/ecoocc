@@ -60,6 +60,36 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// cooc_mututal_information_core
+DataFrame cooc_mututal_information_core(IntegerVector n1, IntegerVector n2, IntegerVector n11, IntegerVector n10, IntegerVector n01, IntegerVector n00, int nsite);
+RcppExport SEXP _ecoocc_cooc_mututal_information_core(SEXP n1SEXP, SEXP n2SEXP, SEXP n11SEXP, SEXP n10SEXP, SEXP n01SEXP, SEXP n00SEXP, SEXP nsiteSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type n1(n1SEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type n2(n2SEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type n11(n11SEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type n10(n10SEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type n01(n01SEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type n00(n00SEXP);
+    Rcpp::traits::input_parameter< int >::type nsite(nsiteSEXP);
+    rcpp_result_gen = Rcpp::wrap(cooc_mututal_information_core(n1, n2, n11, n10, n01, n00, nsite));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cooc_overlap_core
+DataFrame cooc_overlap_core(IntegerVector n1, IntegerVector n2, IntegerVector n11);
+RcppExport SEXP _ecoocc_cooc_overlap_core(SEXP n1SEXP, SEXP n2SEXP, SEXP n11SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type n1(n1SEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type n2(n2SEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type n11(n11SEXP);
+    rcpp_result_gen = Rcpp::wrap(cooc_overlap_core(n1, n2, n11));
+    return rcpp_result_gen;
+END_RCPP
+}
 // cooccurrence_triplet_core
 DataFrame cooccurrence_triplet_core(LogicalMatrix mat_pa);
 RcppExport SEXP _ecoocc_cooccurrence_triplet_core(SEXP mat_paSEXP) {
@@ -101,6 +131,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_ecoocc_cooccurrence_core", (DL_FUNC) &_ecoocc_cooccurrence_core, 1},
     {"_ecoocc_cooc_zscore_binomial_core", (DL_FUNC) &_ecoocc_cooc_zscore_binomial_core, 4},
     {"_ecoocc_cooc_zscore_hypergeom_core", (DL_FUNC) &_ecoocc_cooc_zscore_hypergeom_core, 4},
+    {"_ecoocc_cooc_mututal_information_core", (DL_FUNC) &_ecoocc_cooc_mututal_information_core, 7},
+    {"_ecoocc_cooc_overlap_core", (DL_FUNC) &_ecoocc_cooc_overlap_core, 3},
     {"_ecoocc_cooccurrence_triplet_core", (DL_FUNC) &_ecoocc_cooccurrence_triplet_core, 1},
     {"_ecoocc_rarefaction_core", (DL_FUNC) &_ecoocc_rarefaction_core, 2},
     {"_ecoocc_temporal_beta_core", (DL_FUNC) &_ecoocc_temporal_beta_core, 2},
