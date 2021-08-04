@@ -1,9 +1,10 @@
 #' Generate random presence/absence matrix
 #' 
-#' 
-#' @param nsit site number (determine the number of rows).
+#' @param nsit number of site (determine the number of rows).
 #' @param nspc number of species (determine the number of columns). 
-#' @param probs numeric vector of probabilities presence of species. If there are less elements than species, then the vector is recycled and if there are more, the vector is truncated (see [rep_len()])
+#' @param probs numeric vector of probabilities presence of species. If there 
+#' are less elements than species, then the vector is recycled and if 
+#' there are more, the vector is truncated (see [rep_len()])
 #' @param ... further arguments passed on to [ec_pa()].
 #'
 #' @export
@@ -26,7 +27,7 @@ ec_generate_pa <- function(nsit, nspc, probs, ...) {
 #' @describeIn ec_generate_pa Returns 
 
 #' @param x a `pa` object or an R object to a coerced to one (see [ec_as_pa()]). 
-#' @param by dimension along which the `pa` object should be orderd, default is set to "both".
+#' @param by dimension along which the `pa` object should be ordered, default is set to "both".
 #' @param decreasing Should the sort order be increasing or decreasing? see [order()].
 #'
 #' @export

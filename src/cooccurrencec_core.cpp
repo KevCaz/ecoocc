@@ -124,7 +124,7 @@ double mutual_info_unit(int n12, int n1, int n2, int n) {
         } else if (!n1 | !n2) {
                 out = R_NaN; 
         } else {
-                out = n12 * log2(1.0*n12*n/(1.0*n1*n2));
+                out = n12 * log2(1.0 * n12 * n / (1.0 * n1 * n2));
         }
         return (out);
 }

@@ -3,7 +3,7 @@
 #' Ecological occurrence and more.
 #'
 #' @docType package
-#' @description Occurrence, coccurrence and more.
+#' @description Occurrence, cooccurrence and more.
 #'
 #' @importFrom crayon blue red green yellow
 #' @importFrom cli style_bold style_underline cat_rule cat_line cat_bullet

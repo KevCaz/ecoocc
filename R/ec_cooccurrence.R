@@ -97,11 +97,16 @@ ec_checkerboard <- function(x) {
 #' @param ... ignored.
 #'
 #' @export
+#' mat0 <- matrix(0, 10, 10)
+#' mat1 <- matrix(1, 10, 10)
+#' matU <- rbind(cbind(mat1, mat0), cbind(mat0, mat1))
+#' ec_cooc(ec_as_pa(matU))
 
 ec_cooc <- function(x, ...) UseMethod("ec_cooc")
 
 
 #' @name ec_cooc
+#' @param ... additional parameters.
 #' @export
 
 ec_cooc.pa <- function(x, ...) {
@@ -228,8 +233,8 @@ ec_cooc_global.pa <- function(x, ...) {
 ec_cooc_global.cooc_count <- function(x, nsit, ...) {
   pw <- ec_cooc_pairwise(x, nsit = nsit, ...)
   data.frame(
-    c_score = sum(pw$c_score_unit) / nsit,
-    c_score_S2 = sum(as.double(pw$c_score_unit)*as.double(pw$c_score_unit)) / nsit 
+    c_score = sum(pw$c_score_unit) / nrow(x),
+    c_score_S2 = sum(as.double(pw$c_score_unit)*as.double(pw$c_score_unit)) /  nrow(x) 
   )
 }
 

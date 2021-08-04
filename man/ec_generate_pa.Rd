@@ -10,17 +10,19 @@ ec_generate_pa(nsit, nspc, probs, ...)
 ec_order_pa(x, by = c("both", "site", "species"), decreasing = TRUE)
 }
 \arguments{
-\item{nsit}{site number (determine the number of rows).}
+\item{nsit}{number of site (determine the number of rows).}
 
 \item{nspc}{number of species (determine the number of columns).}
 
-\item{probs}{numeric vector of probabilities presence of species. If there are less elements than species, then the vector is recycled and if there are more, the vector is truncated (see \code{\link[=rep_len]{rep_len()}})}
+\item{probs}{numeric vector of probabilities presence of species. If there
+are less elements than species, then the vector is recycled and if
+there are more, the vector is truncated (see \code{\link[=rep_len]{rep_len()}})}
 
 \item{...}{further arguments passed on to \code{\link[=ec_pa]{ec_pa()}}.}
 
 \item{x}{a \code{pa} object or an R object to a coerced to one (see \code{\link[=ec_as_pa]{ec_as_pa()}}).}
 
-\item{by}{dimension along which the \code{pa} object should be orderd, default is set to "both".}
+\item{by}{dimension along which the \code{pa} object should be ordered, default is set to "both".}
 
 \item{decreasing}{Should the sort order be increasing or decreasing? see \code{\link[=order]{order()}}.}
 }

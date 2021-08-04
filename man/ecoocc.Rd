@@ -5,7 +5,7 @@
 \alias{ecoocc}
 \title{ecoocc}
 \description{
-Occurrence, coccurrence and more.
+Occurrence, cooccurrence and more.
 }
 \details{
 Ecological occurrence and more.
