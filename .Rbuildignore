@@ -11,3 +11,5 @@ LICENSE
 ^.github$
 ^ms$
 ^.vscode$
+^doc$
+^Meta$

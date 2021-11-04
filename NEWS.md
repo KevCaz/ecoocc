@@ -1,4 +1,4 @@
-### version 0.0.1
+# eccooc 0.0.1
 
 * Created class `pa` for presence absence objets. 
 * Implemented Rcpp counts occurrence of all pairs and all triplets/triads (see #7).

@@ -4,7 +4,7 @@ author: "Kevin Cazelles"
 date: 10-09-2018
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Get started with  ecoocc}
+  %\VignetteIndexEntry{Get started with ecoocc}
   %\VignetteEngine{knitr::rmarkdown}
 ---
 
