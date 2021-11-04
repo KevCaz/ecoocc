@@ -31,75 +31,77 @@ randomly generate object of class `pa` quickly, `ec_generate_pa()`.
     # a pa object of 10 and 5 species all species having a prensence probability of .4
     ec_generate_pa(10, 5, .4)
 
-    ## ⚠ Empty site(s): 1, 3
+    ## ⚠ Empty site(s): 1, 2, 4
 
     ## ℹ Presence absence matrix: 10 sites, 5 species, 16 occurrences.
 
     ##        spc_1 spc_2 spc_3 spc_4 spc_5
     ## sit_01     0     0     0     0     0
-    ## sit_02     1     0     0     0     0
-    ## sit_03     0     0     0     0     0
-    ## sit_04     1     0     0     0     0
-    ## sit_05     0     0     1     0     0
-    ## sit_06     0     1     1     0     1
-    ## sit_07     1     1     1     1     1
-    ## sit_08     1     0     1     0     0
-    ## sit_09     1     0     1     0     0
-    ## sit_10     0     0     0     0     1
+    ## sit_02     0     0     0     0     0
+    ## sit_03     1     0     0     0     0
+    ## sit_04     0     0     0     0     0
+    ## sit_05     1     0     1     1     0
+    ## sit_06     0     0     1     0     0
+    ## sit_07     1     1     0     1     0
+    ## sit_08     0     1     1     0     0
+    ## sit_09     0     0     1     0     0
+    ## sit_10     1     1     1     1     1
 
 ### Beta diversity
 
     (mat <- ec_generate_pa(5, 3, .5))
 
-    ## ℹ Presence absence matrix: 5 sites, 3 species, 8 occurrences.
+    ## ⚠ Empty site(s): 1
+
+    ## ℹ Presence absence matrix: 5 sites, 3 species, 9 occurrences.
 
     ec_betadiversity(mat)
 
     ##       spc_1 spc_2 spc_3
-    ## sit_1     0     1     1
-    ## sit_2     1     0     0
-    ## sit_3     1     0     0
-    ## sit_4     0     0     1
+    ## sit_1     0     0     0
+    ## sit_2     0     1     0
+    ## sit_3     1     1     0
+    ## sit_4     1     1     1
     ## sit_5     1     1     1
     ##    site1 site2        bc
     ## 1  sit_1 sit_2 1.0000000
     ## 2  sit_1 sit_3 1.0000000
-    ## 3  sit_1 sit_4 0.3333333
-    ## 4  sit_1 sit_5 0.2000000
-    ## 5  sit_2 sit_3 0.0000000
-    ## 6  sit_2 sit_4 1.0000000
+    ## 3  sit_1 sit_4 1.0000000
+    ## 4  sit_1 sit_5 1.0000000
+    ## 5  sit_2 sit_3 0.3333333
+    ## 6  sit_2 sit_4 0.5000000
     ## 7  sit_2 sit_5 0.5000000
-    ## 8  sit_3 sit_4 1.0000000
-    ## 9  sit_3 sit_5 0.5000000
-    ## 10 sit_4 sit_5 0.5000000
+    ## 8  sit_3 sit_4 0.2000000
+    ## 9  sit_3 sit_5 0.2000000
+    ## 10 sit_4 sit_5 0.0000000
 
 ### Rarefaction
 
     (mat <- ec_generate_pa(10, 4, .4))
 
-    ## ⚠ Empty site(s): 1, 6
+    ## ⚠ Empty site(s): 6
 
-    ## ℹ Presence absence matrix: 10 sites, 4 species, 17 occurrences.
+    ## ℹ Presence absence matrix: 10 sites, 4 species, 12 occurrences.
 
     ec_rarefaction(mat, 6)
 
     ##        spc_1 spc_2 spc_3 spc_4
-    ## sit_01     0     0     0     0
-    ## sit_02     0     1     0     0
-    ## sit_03     1     1     1     0
-    ## sit_04     0     0     0     1
-    ## sit_05     0     0     1     0
+    ## sit_01     0     1     0     0
+    ## sit_02     0     0     1     0
+    ## sit_03     0     1     1     0
+    ## sit_04     0     1     1     0
+    ## sit_05     1     0     0     0
     ## sit_06     0     0     0     0
-    ## sit_07     0     1     1     1
-    ## sit_08     1     1     1     1
-    ## sit_09     1     0     0     1
-    ## sit_10     0     1     0     1
+    ## sit_07     1     0     0     1
+    ## sit_08     0     0     1     0
+    ## sit_09     0     0     0     1
+    ## sit_10     0     0     1     0
     ##       [,1] [,2] [,3] [,4] [,5] [,6]
-    ##  [1,]    2    2    1    1    1    0
-    ##  [2,]    2    3    2    3    3    4
-    ##  [3,]    4    4    3    3    4    4
-    ##  [4,]    4    4    3    3    4    4
-    ##  [5,]    4    4    3    4    4    4
+    ##  [1,]    2    2    2    1    1    1
+    ##  [2,]    2    3    2    2    1    3
+    ##  [3,]    4    3    3    2    2    4
+    ##  [4,]    4    4    4    3    3    4
+    ##  [5,]    4    4    4    3    4    4
     ##  [6,]    4    4    4    4    4    4
     ##  [7,]    4    4    4    4    4    4
     ##  [8,]    4    4    4    4    4    4

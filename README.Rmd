@@ -1,7 +1,7 @@
 ---
 title: "ecoocc"
-output:
-    gfm
+output: 
+  md_document
 ---
 
 
