@@ -77,7 +77,7 @@ ec_cooc(ec_pa(mat))
 - [`coocur`](https://CRAN.R-project.org/package=cooccur)
 - [`PresenceAbsence`](https://CRAN.R-project.org/package=PresenceAbsence)
 - [`EcoSimR`](https://CRAN.R-project.org/package=EcoSimR) (currently archived)
-
+- [`ecospat`](https://CRAN.R-project.org/package=ecospat)
 
 ## Others 
  
