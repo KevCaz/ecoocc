@@ -6,19 +6,17 @@ Authors@R: c(
   person("Kevin", "Cazelles", email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874"), role = c("aut", "cre"))
   )
 Description: A package that implements ecological methods on presence-absence data.
-Depends:
-    R (>= 3.3.0)
 URL: https://github.com/KevCaz/ecoocc
 LazyData: true
 LinkingTo: Rcpp
 Imports:
     cli,
     crayon,
-    Rcpp (>= 0.12.7)
+    Rcpp (>= 0.12.7),
+    stats
 Suggests:
     knitr,
     rmarkdown,
-    stats,
     testthat
 NeedsCompilation: yes
 Encoding: UTF-8
