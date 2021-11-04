@@ -6,6 +6,7 @@ Makefile
 inst/tmp
 ms
 .vscode/
+docs/
 
 # History files
 .Rhistory
