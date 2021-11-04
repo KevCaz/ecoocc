@@ -58,3 +58,9 @@ Cooccurrence analysis.
 \item \code{ec_cooc_global}: Return a matrix of cooccurrence metrics for species.
 }}
 
+\examples{
+mat0 <- matrix(0, 10, 10)
+mat1 <- matrix(1, 10, 10)
+matU <- rbind(cbind(mat1, mat0), cbind(mat0, mat1))
+ec_cooc(ec_as_pa(matU))
+}

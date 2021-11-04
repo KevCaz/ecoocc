@@ -11,7 +11,7 @@
 #'
 #' @details
 #' Currently `ra` stands for raw and returns the number of occurrence.
-#' Additionnal values are
+#' Additionnalnnal values are
 #' - `bc`: Bray-Curtis index,
 #' - `wi`: Wishart index,
 #' - `ja`: Jaccard index.

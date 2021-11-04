@@ -24,7 +24,7 @@ Compute temporal betadiversity.
 }
 \details{
 Currently \code{ra} stands for raw and returns the number of occurrence.
-Additionnal values are
+Additionnalnnal values are
 \itemize{
 \item \code{bc}: Bray-Curtis index,
 \item \code{wi}: Wishart index,

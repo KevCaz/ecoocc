@@ -26,7 +26,7 @@ remotes::install_github("KevCaz/ecoocc")
 
 Once installed, load it and try it!
 
-```{r}
+```{r load}
 library(ecoocc)
 ```
 
@@ -35,10 +35,10 @@ library(ecoocc)
 
 ### Presence absence matrix 
 
-`ec_as_pa()` creates objects of class `pa`, there is a shortcut to randomly  generate  object of class `pa` quickly, `ec_generate_pa()`. 
+`ec_as_pa()` creates objects of class `pa`, there is a shortcut to randomly  generate object of class `pa` quickly, `ec_generate_pa()`. 
 
 
-```{r, results = "hold"}
+```{r generate, results = "hold"}
 # a pa object of 10 and 5 species all species having a prensence probability of .4
 ec_generate_pa(10, 5, .4)
 ```
@@ -46,7 +46,7 @@ ec_generate_pa(10, 5, .4)
 
 ### Beta diversity
 
-```{r, results = "hold"}
+```{r betadiv, results = "hold"}
 (mat <- ec_generate_pa(5, 3, .5))
 ec_betadiversity(mat)
 ```
@@ -54,24 +54,31 @@ ec_betadiversity(mat)
 
 ### Rarefaction
 
-```{r, results = "hold"}
+```{r rare, results = "hold"}
 (mat <- ec_generate_pa(10, 4, .4))
 ec_rarefaction(mat, 6)
 ```
 
 
-### Temporal beta diversity
-
-
-```{r, results = "hold"}
-(mat <- rbind(c(0,0,1), c(0,1,0)))
-ec_cooc_count_pair(mat)
- ```
-
-
 ### Occurrence
 
-```{r, results = "hold"}
+```{r cooc, results = "hold"}
 mat <- rbind(c(0,0,1), c(0,1,0))
-ec_cooc_count_pair(mat)
- ```
+ec_cooc(ec_pa(mat))
+```
+
+
+
+## Related works
+
+## R :package: 
+
+- [`coocur`](https://CRAN.R-project.org/package=cooccur)
+- [`PresenceAbsence`](https://CRAN.R-project.org/package=PresenceAbsence)
+- [`EcoSimR`](https://CRAN.R-project.org/package=EcoSimR) (currently archived)
+
+
+## Others 
+ 
+- [PRESENCE](https://www.mbr-pwrc.usgs.gov/software/doc/presence/presence.html) 
+

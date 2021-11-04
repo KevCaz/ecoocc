@@ -97,6 +97,7 @@ ec_checkerboard <- function(x) {
 #' @param ... ignored.
 #'
 #' @export
+#' @examples
 #' mat0 <- matrix(0, 10, 10)
 #' mat1 <- matrix(1, 10, 10)
 #' matU <- rbind(cbind(mat1, mat0), cbind(mat0, mat1))
@@ -238,7 +239,7 @@ ec_cooc_global.cooc_count <- function(x, nsit, ...) {
   )
 }
 
-
+# INTERNAL
 # number of species given the number of row in cooc_count
 # solve x^2-x-2nrow = 0 
 # only positive solution
