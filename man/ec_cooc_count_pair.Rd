@@ -28,18 +28,18 @@ give very similar results.
 }
 \section{Functions}{
 \itemize{
-\item \code{ec_cooc_count_pair}: A matrix with all pairs of species and the corresponding co-occurrence counts.
+\item \code{ec_cooc_count_pair()}: A matrix with all pairs of species and the corresponding co-occurrence counts.
 
-\item \code{ec_cooc_count_triplet}: A matrix with all triplets of species and the corresponding co-occurrence counts.
+\item \code{ec_cooc_count_triplet()}: A matrix with all triplets of species and the corresponding co-occurrence counts.
 
-\item \code{ec_checkerboard}: Compute the checkerboard score and return a list of three elements:
+\item \code{ec_checkerboard()}: Compute the checkerboard score and return a list of three elements:
 \itemize{
 \item \code{units} which incudes checkerboard units and t
 \item \code{c_score} checkerboard scores.
 \item \code{c_score_s2} the S2 statistics in Roberts & Stone (1990).
 }
-}}
 
+}}
 \examples{
 mat <- ec_generate_pa(1000, 6, .2)
 out <- ec_cooc_count_pair(mat)

@@ -1,20 +1,17 @@
 ---
 title: "Get started with ecoocc"
 author: "Kevin Cazelles"
-date: 10-09-2018
+date: 20-05-2023
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Get started with ecoocc}
   %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 
 ```{r setup, echo = FALSE}
-# NOT_CRAN <- TRUE
-NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
 knitr::opts_chunk$set(
-  purl = NOT_CRAN,
-  eval = NOT_CRAN,
   fig.align = "center",
   comment = "#> "
 )
@@ -28,11 +25,17 @@ with presence absence matrices. Performance was one of the most important
 feature the core of the function are therefore written in C++.
 
 
+## Generating presence-absence 
+
+```{r}
+mat <- ec_generate_pa(20, 10, .4)
+```
+
 ## Rarefaction
 
 
 ```{r}
-mat <- matrix(stats::runif(2000)>.9, ncol = 20)
+mat <- matrix(stats::runif(2000) > .9, ncol = 20)
 res <- apply(ec_rarefaction(mat, 1000), 1, mean)
 plot(res, type = "l", lwd = 2)
 ```

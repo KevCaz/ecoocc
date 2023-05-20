@@ -10,7 +10,7 @@
 #' A matrix with rarefaction replicates as rows.
 #'
 #' @references
-#' Gotelli, N. J., and Robert K. C.. Quantifying Biodiversity: Procedures and Pitfalls in the Measurement and Comparison of Species Richness. Ecology Letters (2001).
+#' * Gotelli, N. J., and Robert K. C.. Quantifying Biodiversity: Procedures and Pitfalls in the Measurement and Comparison of Species Richness. Ecology Letters (2001).
 #'
 #' @export
 #'

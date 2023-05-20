@@ -1,7 +1,6 @@
+^Meta$
 ^\.Rproj\.user$
 ^.*\.Rproj$
-^appveyor\.yml$
-^\.travis\.yml$
 ^\.gitignore
 ^Makefile
 ^README\.md
@@ -13,3 +12,6 @@ LICENSE
 ^.vscode$
 ^doc$
 ^docs$
+^codecov\.yml$
+^\.github$
+^_pkgdown.yml$

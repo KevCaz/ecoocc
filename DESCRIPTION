@@ -1,9 +1,9 @@
 Package: ecoocc
 Title: Occurrence, co-occurrence and more
-Version: 0.0.1
-Date: 2021-11-04
+Version: 0.0.1.9000
+Date: 2023-05-20
 Authors@R: c(
-  person("Kevin", "Cazelles", email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874"), role = c("aut", "cre"))
+  person("Kevin", "Cazelles", email = "kevin.cazelles@gmail.com", comment = c(ORCID = "0000-0001-6619-9874"), role = c("aut", "cre"))
   )
 Description: A package that implements ecological methods on presence-absence data.
 URL: https://github.com/KevCaz/ecoocc
@@ -11,10 +11,10 @@ LazyData: true
 LinkingTo: Rcpp
 Imports:
     cli,
-    crayon,
     Rcpp (>= 0.12.7),
     stats
 Suggests:
+    covr,
     knitr,
     rmarkdown,
     testthat
@@ -23,5 +23,5 @@ Encoding: UTF-8
 VignetteBuilder: knitr
 License: GPL (>= 2)
 BugReports: https://github.com/KevCaz/ecoocc/issues
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)

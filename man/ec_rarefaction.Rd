@@ -23,5 +23,7 @@ res <- ec_rarefaction(mat, 1000)
 plot(apply(res, 1, mean))
 }
 \references{
-Gotelli, N. J., and Robert K. C.. Quantifying Biodiversity: Procedures and Pitfalls in the Measurement and Comparison of Species Richness. Ecology Letters (2001).
+\itemize{
+\item Gotelli, N. J., and Robert K. C.. Quantifying Biodiversity: Procedures and Pitfalls in the Measurement and Comparison of Species Richness. Ecology Letters (2001).
+}
 }

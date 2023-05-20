@@ -31,9 +31,9 @@ Generate random presence/absence matrix
 }
 \section{Functions}{
 \itemize{
-\item \code{ec_order_pa}: Returns
-}}
+\item \code{ec_order_pa()}: Returns
 
+}}
 \examples{
 ec_generate_pa(20, 10, .1)
 ec_order_pa(ec_generate_pa(20, 10, .1))

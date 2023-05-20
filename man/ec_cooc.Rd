@@ -51,13 +51,13 @@ Cooccurrence analysis.
 }
 \section{Functions}{
 \itemize{
-\item \code{ec_cooc_pairwise}: Return a matrix of cooccurrence metrics for pair of species.
+\item \code{ec_cooc_pairwise()}: Return a matrix of cooccurrence metrics for pair of species.
 
-\item \code{ec_cooc_species}: Return a matrix of cooccurrence metrics for species.
+\item \code{ec_cooc_species()}: Return a matrix of cooccurrence metrics for species.
 
-\item \code{ec_cooc_global}: Return a matrix of cooccurrence metrics for species.
+\item \code{ec_cooc_global()}: Return a matrix of cooccurrence metrics for species.
+
 }}
-
 \examples{
 mat0 <- matrix(0, 10, 10)
 mat1 <- matrix(1, 10, 10)
